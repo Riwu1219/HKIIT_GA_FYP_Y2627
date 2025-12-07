@@ -1804,6 +1804,10 @@ PrefabInstance:
       value: Earth
       objectReference: {fileID: 0}
     - target: {fileID: 8872979002691209405, guid: 74150cdadfdcb52449d9be3b0ff5178e, type: 3}
+      propertyPath: rotationPerDay
+      value: 360
+      objectReference: {fileID: 0}
+    - target: {fileID: 8872979002691209405, guid: 74150cdadfdcb52449d9be3b0ff5178e, type: 3}
       propertyPath: rotationSpeed.x
       value: 0.1
       objectReference: {fileID: 0}

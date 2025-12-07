@@ -4,7 +4,7 @@ public class EarthScript : MonoBehaviour
 {
     private GameObject earthAxis;
     public float earthAxisTilt = 23.5f;
-    public float rotationSpeed;
+    public float rotationPerDay = 360;
     public float dayPeriodInHours = 24f;
 
 
@@ -18,6 +18,6 @@ public class EarthScript : MonoBehaviour
 
     void Update()
     {
-        transform.rotation *= Quaternion.Euler(0, rotationSpeed * Time.deltaTime, 0);
+        transform.rotation *= Quaternion.Euler(0, rotationPerDay * Time.deltaTime / (3600 * dayPeriodInHours), 0);
     }
 }

@@ -192,3 +192,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 378d76b84f0209744b62c6fec4e2e271, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EarthScript
+  earthAxisTilt: 23.5
+  rotationPerDay: 360
+  dayPeriodInHours: 24
