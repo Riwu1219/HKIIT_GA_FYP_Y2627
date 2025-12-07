@@ -1,12 +1,11 @@
 using UnityEngine;
 
-public class EarthScript : MonoBehaviour
+public class EarthScript : MonoBehaviour    
 {
     private GameObject earthAxis;
     public float earthAxisTilt = 23.5f;
     public float rotationPerDay = 360;
     public float dayPeriodInHours = 24f;
-
 
     private void Start()
     {
@@ -18,6 +17,6 @@ public class EarthScript : MonoBehaviour
 
     void Update()
     {
-        transform.rotation *= Quaternion.Euler(0, rotationPerDay * Time.deltaTime / (3600 * dayPeriodInHours), 0);
+        earthAxis.transform.rotation *= Quaternion.Euler(0, (rotationPerDay * Time.deltaTime / (3600 * dayPeriodInHours)) * MoonSceneManager.instance.universalTimeScale, 0);
     }
 }
