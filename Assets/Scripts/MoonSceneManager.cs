@@ -37,8 +37,8 @@ public class MoonSceneManager : MonoBehaviour
     void Update()
     {
         if (hdriSky == null) return;
-        hdriSky.rotation.value += (degreesPerSecond * Time.deltaTime) * universalTimeScale;
-        if (hdriSky.rotation.value >= 360f) { hdriSky.rotation.value = 0f; }
+        hdriSky.rotation.value -= (degreesPerSecond * Time.deltaTime) * universalTimeScale;
+        if (hdriSky.rotation.value <= 0f) { hdriSky.rotation.value = 360f; }
 
     }
 }
