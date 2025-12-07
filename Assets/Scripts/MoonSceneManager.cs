@@ -18,6 +18,7 @@ public class MoonSceneManager : MonoBehaviour
 
     private void Awake()
     {
+        if (universalTimeScale < 0) { universalTimeScale *= -1; }
         if (instance == null)
         {
             instance = this;
