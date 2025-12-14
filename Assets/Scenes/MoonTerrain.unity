@@ -119,6 +119,17 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &437483446 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7888636141149536400, guid: e42a2a7cb280e484296cb3ff5f08ac3b, type: 3}
+  m_PrefabInstance: {fileID: 1768643743}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6803edce0201f574f923fd9d10e5b30a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1145852187
 GameObject:
   m_ObjectHideFlags: 0
@@ -507,10 +518,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: XR_Setup
       objectReference: {fileID: 0}
+    - target: {fileID: 3401782318495867129, guid: e42a2a7cb280e484296cb3ff5f08ac3b, type: 3}
+      propertyPath: m_RayInteractor
+      value: 
+      objectReference: {fileID: 437483446}
+    - target: {fileID: 4674761053403603468, guid: e42a2a7cb280e484296cb3ff5f08ac3b, type: 3}
+      propertyPath: m_FallbackIfEyeTrackingUnavailable
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5513941605512094857, guid: e42a2a7cb280e484296cb3ff5f08ac3b, type: 3}
+      propertyPath: m_InteractionManager
+      value: 
+      objectReference: {fileID: 2074410160}
     - target: {fileID: 5591741852942495050, guid: e42a2a7cb280e484296cb3ff5f08ac3b, type: 3}
       propertyPath: stopNaNs
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6442519114816386097, guid: e42a2a7cb280e484296cb3ff5f08ac3b, type: 3}
+      propertyPath: m_UseLocalSpace
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6948941602689351461, guid: e42a2a7cb280e484296cb3ff5f08ac3b, type: 3}
+      propertyPath: m_InteractionManager
+      value: 
+      objectReference: {fileID: 2074410160}
     - target: {fileID: 7738975316024994251, guid: e42a2a7cb280e484296cb3ff5f08ac3b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 722.33594
@@ -567,6 +598,7 @@ GameObject:
   - component: {fileID: 1784402383}
   - component: {fileID: 1784402385}
   - component: {fileID: 1784402384}
+  - component: {fileID: 1784402386}
   m_Layer: 0
   m_Name: MoonTerria
   m_TagString: Untagged
@@ -649,6 +681,98 @@ Terrain:
   m_EnableHeightmapRayTracing: 1
   m_EnableTreesAndDetailsRayTracing: 0
   m_TreeMotionVectorModeOverride: 3
+--- !u!114 &1784402386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1784402382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38f6bf3d943ac7945842268c9ef1dca6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.XR.Interaction.Toolkit::UnityEngine.XR.Interaction.Toolkit.Locomotion.Teleportation.TeleportationArea
+  m_InteractionManager: {fileID: 2074410160}
+  m_Colliders: []
+  m_InteractionLayers:
+    m_Bits: 1
+  m_DistanceCalculationMode: 1
+  m_SelectMode: 1
+  m_FocusMode: 1
+  m_CustomReticle: {fileID: 0}
+  m_AllowGazeInteraction: 0
+  m_AllowGazeSelect: 0
+  m_OverrideGazeTimeToSelect: 0
+  m_GazeTimeToSelect: 0.5
+  m_OverrideTimeToAutoDeselectGaze: 0
+  m_TimeToAutoDeselectGaze: 3
+  m_AllowGazeAssistance: 0
+  m_FirstHoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_LastHoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_HoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_HoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FirstSelectEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_LastSelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_SelectEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_SelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FirstFocusEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_LastFocusExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FocusEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FocusExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Activated:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Deactivated:
+    m_PersistentCalls:
+      m_Calls: []
+  m_StartingHoverFilters: []
+  m_StartingSelectFilters: []
+  m_StartingInteractionStrengthFilters: []
+  m_TeleportationProvider: {fileID: 0}
+  m_MatchOrientation: 0
+  m_MatchDirectionalInput: 0
+  m_TeleportTrigger: 0
+  m_FilterSelectionByHitNormal: 0
+  m_UpNormalToleranceDegrees: 30
+  m_Teleporting:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &2074410160 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8481751770153968821, guid: e42a2a7cb280e484296cb3ff5f08ac3b, type: 3}
+  m_PrefabInstance: {fileID: 1768643743}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83e4e6cca11330d4088d729ab4fc9d9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2089835615
 GameObject:
   m_ObjectHideFlags: 0
