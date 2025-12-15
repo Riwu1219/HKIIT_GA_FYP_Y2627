@@ -1499,6 +1499,9 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8839851748545140149, guid: e42a2a7cb280e484296cb3ff5f08ac3b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1239943778}
     - targetCorrespondingSourceObject: {fileID: 7888636141702368489, guid: e42a2a7cb280e484296cb3ff5f08ac3b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1593425309}
@@ -1509,6 +1512,34 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1593425307}
   m_SourcePrefab: {fileID: 100100000, guid: e42a2a7cb280e484296cb3ff5f08ac3b, type: 3}
+--- !u!1 &1239943776 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8839851748545140149, guid: e42a2a7cb280e484296cb3ff5f08ac3b, type: 3}
+  m_PrefabInstance: {fileID: 1239943775}
+  m_PrefabAsset: {fileID: 0}
+--- !u!143 &1239943777 stripped
+CharacterController:
+  m_CorrespondingSourceObject: {fileID: 4252867260488570626, guid: e42a2a7cb280e484296cb3ff5f08ac3b, type: 3}
+  m_PrefabInstance: {fileID: 1239943775}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1239943778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1239943776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a58a121cff136c146a640abc1df77dc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  jumpButton: {fileID: 9139937735999538437, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  jumpHeight: 3
+  cc: {fileID: 1239943777}
+  groundLayers:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!1 &1359956632
 GameObject:
   m_ObjectHideFlags: 19
@@ -1715,7 +1746,7 @@ GameObject:
   - component: {fileID: 1758255997}
   - component: {fileID: 1758255996}
   - component: {fileID: 1758255995}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Terrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
