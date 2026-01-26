@@ -53,7 +53,7 @@ MonoBehaviour:
     colorBufferFormat: 74
     supportCustomPass: 1
     supportVariableRateShading: 1
-    customBufferFormat: 12
+    customBufferFormat: 8
     supportedLitShaderMode: 2
     planarReflectionResolution:
       m_Values: 000100000004000000080000
@@ -195,7 +195,7 @@ MonoBehaviour:
       lowResVolumetricCloudsMinimumThreshold: 50
       enableDLSS: 0
     lowresTransparentSettings:
-      enabled: 1
+      enabled: 0
       checkerboardDepthBuffer: 1
       upsampleType: 1
     xrSettings:

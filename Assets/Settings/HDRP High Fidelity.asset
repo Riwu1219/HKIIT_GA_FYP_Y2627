@@ -68,7 +68,7 @@ MonoBehaviour:
     supportSurfaceGradient: 0
     decalNormalBufferHP: 0
     supportHighQualityLineRendering: 0
-    highQualityLineRenderingMemoryBudget: 128
+    highQualityLineRenderingMemoryBudget: 256
     msaaSampleCount: 1
     supportMotionVectors: 1
     supportScreenSpaceLensFlare: 1
