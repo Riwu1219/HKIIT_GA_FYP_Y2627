@@ -1,3 +1,4 @@
+using Unity.XR.OpenVR;
 using UnityEngine;
 
 public class MoonRoverScript : MonoBehaviour
@@ -6,6 +7,9 @@ public class MoonRoverScript : MonoBehaviour
     public WheelCollider fl, fr, bl, br;
     public float driveSpeed, steerSpeed;
     private float horizontalInput, verticalInput;
+    private GameObject player;
+
+    public OpenVROculusTouchController leftController;
 
     private void Update()
     {
