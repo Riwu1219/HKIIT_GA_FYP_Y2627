@@ -17,6 +17,6 @@ public class EarthScript : MonoBehaviour
 
     void Update()
     {
-        earthAxis.transform.rotation *= Quaternion.Euler(0, (rotationPerDay * Time.deltaTime / (3600 * dayPeriodInHours)) * MoonSceneManager.instance.universalTimeScale, 0);
+        earthAxis.transform.rotation *= Quaternion.Euler(0, (rotationPerDay * Time.deltaTime / (3600 * dayPeriodInHours)) * 1, 0);
     }
 }
