@@ -13,7 +13,8 @@ public class MoonRoverScript : MonoBehaviour
     public GameObject interactBtn;
 
     public OpenVROculusTouchController leftController;
-    public GameObject[] ControlObject; 
+    public GameObject[] ControlObject;
+    public Transform sit_trans;
 
     private void Update()
     {
@@ -34,14 +35,16 @@ public class MoonRoverScript : MonoBehaviour
         br.motorTorque = verticalInput * driveSpeed;
     }
 
-    public void EnterRover(GameObject player)
+    public void EnterRover()
     {
-        driverPlayer.transform.SetParent(transform);
+        driverPlayer.transform.SetParent(sit_trans);
         foreach (var obj in ControlObject)
         {
             obj.SetActive(false);
         }
 
+        driverPlayer.transform.position = sit_trans.position;
+        driverPlayer.transform.rotation = sit_trans.rotation;
         interactBtn.SetActive(false);
         isDriving = true;
     }
