@@ -7,13 +7,13 @@ public class MoonRoverScript : MonoBehaviour
     public WheelCollider fl, fr, bl, br;
     public float driveSpeed, steerSpeed;
     private float horizontalInput, verticalInput;
-    private GameObject tempPlayer;
     public GameObject driverPlayer;
 
     public bool isDriving = false;
     public GameObject interactBtn;
 
     public OpenVROculusTouchController leftController;
+    public GameObject[] ControlObject; 
 
     private void Update()
     {
@@ -36,19 +36,26 @@ public class MoonRoverScript : MonoBehaviour
 
     public void EnterRover(GameObject player)
     {
+        driverPlayer.transform.SetParent(transform);
+        foreach (var obj in ControlObject)
+        {
+            obj.SetActive(false);
+        }
+
         interactBtn.SetActive(false);
-        this.tempPlayer = player;
-        player.SetActive(false);
-        driverPlayer.SetActive(true);
         isDriving = true;
     }
 
     public void ExitRover()
     {
+        driverPlayer.transform.SetParent(null);
+        foreach (var obj in ControlObject)
+        {
+            obj.SetActive(true);
+        }
+
         interactBtn.SetActive(true);
-        tempPlayer.transform.position = transform.position + transform.right * 2f;
-        tempPlayer.SetActive(true);
-        driverPlayer.SetActive(false);
+        driverPlayer.transform.position = transform.position + transform.right * 2f;
         isDriving = false;
     }
 
