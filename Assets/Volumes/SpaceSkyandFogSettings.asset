@@ -15,7 +15,7 @@ MonoBehaviour:
   active: 1
   rotation:
     m_OverrideState: 0
-    m_Value: 180
+    m_Value: 274.96002
   skyIntensityMode:
     m_OverrideState: 1
     m_Value: 1
@@ -71,7 +71,7 @@ MonoBehaviour:
       multiplyValue: 1
   sunInitialRotation:
     m_OverrideState: 0
-    m_Value: -180
+    m_Value: -274.96002
   lockSun:
     m_OverrideState: 1
     m_Value: 1
@@ -453,10 +453,10 @@ MonoBehaviour:
     m_Value: 0
   limitMin:
     m_OverrideState: 1
-    m_Value: 2
+    m_Value: 1.7288134
   limitMax:
     m_OverrideState: 1
-    m_Value: 14
+    m_Value: 3.635593
   curveMap:
     m_OverrideState: 0
     m_Value:
@@ -536,7 +536,7 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
   adaptationMode:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 1
   adaptationSpeedDarkToLight:
     m_OverrideState: 0
@@ -549,7 +549,7 @@ MonoBehaviour:
     m_Value: {fileID: 0}
   histogramPercentages:
     m_OverrideState: 0
-    m_Value: {x: 40, y: 90}
+    m_Value: {x: 32.413795, y: 82.41378}
   histogramUseCurveRemapping:
     m_OverrideState: 0
     m_Value: 0

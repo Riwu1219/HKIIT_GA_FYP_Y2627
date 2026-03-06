@@ -263,7 +263,7 @@ MonoBehaviour:
   priority: 0
   blendDistance: 0
   weight: 1
-  sharedProfile: {fileID: 11400000, guid: 0531d605c05a0c04095a46d89ad4d8ae, type: 2}
+  sharedProfile: {fileID: 11400000, guid: 9a0464bda4949bd4cab1acfa799b52f1, type: 2}
 --- !u!4 &1403664348
 Transform:
   m_ObjectHideFlags: 0
@@ -308,7 +308,7 @@ Light:
   serializedVersion: 11
   m_Type: 1
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 100000
+  m_Intensity: 142.74811
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -349,7 +349,7 @@ Light:
   m_RenderingLayerMask: 1
   m_Lightmapping: 4
   m_LightShadowCasterMode: 2
-  m_AreaSize: {x: 1, y: 1}
+  m_AreaSize: {x: 0.5, y: 0.5}
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 1
@@ -631,7 +631,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   volumeAnchorOverride: {fileID: 0}
-  antialiasing: 0
+  antialiasing: 1
   SMAAQuality: 2
   dithering: 0
   stopNaNs: 0
@@ -799,7 +799,7 @@ MonoBehaviour:
   priority: 0
   blendDistance: 0
   weight: 1
-  sharedProfile: {fileID: 11400000, guid: 2175894aff10c6c4a8523562c3399e44, type: 2}
+  sharedProfile: {fileID: 11400000, guid: 5c8997d720de89848994819ff4159bae, type: 2}
 --- !u!1001 &2129213594
 PrefabInstance:
   m_ObjectHideFlags: 0
