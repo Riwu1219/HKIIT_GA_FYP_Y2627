@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.RenderPipelines.HighDefinition.Runtime::UnityEngine.Rendering.HighDefinition.HDRISky
   active: 1
   rotation:
-    m_OverrideState: 0
-    m_Value: 274.96002
+    m_OverrideState: 1
+    m_Value: 128
   skyIntensityMode:
     m_OverrideState: 1
     m_Value: 1
@@ -33,7 +33,7 @@ MonoBehaviour:
     m_Value: {x: 0.5, y: 0.46389666, z: 0.42935467}
   desiredLuxValue:
     m_OverrideState: 1
-    m_Value: 0.13
+    m_Value: -1
   updateMode:
     m_OverrideState: 0
     m_Value: 0
@@ -71,7 +71,7 @@ MonoBehaviour:
       multiplyValue: 1
   sunInitialRotation:
     m_OverrideState: 0
-    m_Value: -274.96002
+    m_Value: 85.03998
   lockSun:
     m_OverrideState: 1
     m_Value: 1
