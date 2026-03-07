@@ -15,7 +15,7 @@ MonoBehaviour:
   active: 1
   rotation:
     m_OverrideState: 1
-    m_Value: 128
+    m_Value: 213.04
   skyIntensityMode:
     m_OverrideState: 1
     m_Value: 1
@@ -33,7 +33,7 @@ MonoBehaviour:
     m_Value: {x: 0.5, y: 0.46389666, z: 0.42935467}
   desiredLuxValue:
     m_OverrideState: 1
-    m_Value: -1
+    m_Value: 0
   updateMode:
     m_OverrideState: 0
     m_Value: 0
@@ -71,7 +71,7 @@ MonoBehaviour:
       multiplyValue: 1
   sunInitialRotation:
     m_OverrideState: 0
-    m_Value: 85.03998
+    m_Value: -213.04
   lockSun:
     m_OverrideState: 1
     m_Value: 1
