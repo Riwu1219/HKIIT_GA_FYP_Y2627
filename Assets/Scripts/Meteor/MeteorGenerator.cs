@@ -2,15 +2,44 @@ using UnityEngine;
 
 public class MeteorGenerator : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    bool isMeteorDodging = false;
+
+    public GameObject[] meteorPrefab;
+    public Transform[] meteorSpawnPoints;
+
+    private float timer = 0f;
+    public float minSpawnTime = 5f;
+    public float maxSpawnTime = 10f;
+    public float randSpawnTime;
+
+    private void Start()
     {
-        
+        randSpawnTime = RandomSpawnTime();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if (isMeteorDodging) 
+        { 
+            timer += Time.deltaTime;
+            if (timer >= randSpawnTime)
+            {
+                randSpawnTime = RandomSpawnTime();
+                SpawnMeteor();
+                timer = 0f;
+            }
+        }
     }
+
+    public void SpawnMeteor()
+    {
+        Instantiate(meteorPrefab[Random.Range(0, meteorPrefab.Length)], meteorSpawnPoints[Random.Range(0, meteorPrefab.Length)]);
+    }
+
+    private float RandomSpawnTime()
+    {
+        float randtime = Random.Range(minSpawnTime, maxSpawnTime);
+        return randtime;
+    }
+
 }
