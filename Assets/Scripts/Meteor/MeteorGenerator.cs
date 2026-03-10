@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class MeteorGenerator : MonoBehaviour
 {
-    bool isMeteorDodging = false;
+    public bool isMeteorGenerate = false;
 
     public GameObject[] meteorPrefab;
     public Transform[] meteorSpawnPoints;
@@ -19,7 +19,7 @@ public class MeteorGenerator : MonoBehaviour
 
     void Update()
     {
-        if (isMeteorDodging) 
+        if (isMeteorGenerate) 
         { 
             timer += Time.deltaTime;
             if (timer >= randSpawnTime)

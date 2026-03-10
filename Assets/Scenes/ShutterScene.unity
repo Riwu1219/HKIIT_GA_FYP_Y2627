@@ -402,6 +402,7 @@ GameObject:
   m_Component:
   - component: {fileID: 806126905}
   - component: {fileID: 806126906}
+  - component: {fileID: 806126907}
   m_Layer: 0
   m_Name: SceneManager
   m_TagString: Untagged
@@ -438,6 +439,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MoonSceneManager
   volume: {fileID: 1206866446}
   universalTimeScale: 1
+--- !u!114 &806126907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 806126904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c759ceb05f7094841b45be4d3d063e04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  meteorGenerator: {fileID: 1104886074}
+  shutter: {fileID: 1550133533}
+  speed: 0
 --- !u!1 &1104886072
 GameObject:
   m_ObjectHideFlags: 0
@@ -449,7 +465,7 @@ GameObject:
   - component: {fileID: 1104886073}
   - component: {fileID: 1104886074}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: MeteorGenrator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -482,6 +498,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4765774578bb7ee47a9789faa8c18c02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MeteorGenerator
+  isMeteorGenerate: 0
   meteorPrefab: []
   meteorSpawnPoints: []
   minSpawnTime: 5
@@ -597,6 +614,7 @@ GameObject:
   - component: {fileID: 1550133536}
   - component: {fileID: 1550133535}
   - component: {fileID: 1550133534}
+  - component: {fileID: 1550133538}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -696,6 +714,33 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &1550133538
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1550133533}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
 --- !u!1 &1737460850
 GameObject:
   m_ObjectHideFlags: 0
