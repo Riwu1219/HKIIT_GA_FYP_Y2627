@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class MeteorGenerator : MonoBehaviour
 {
@@ -6,6 +7,8 @@ public class MeteorGenerator : MonoBehaviour
 
     public GameObject[] meteorPrefab;
     public Transform[] meteorSpawnPoints;
+
+    public List<GameObject> curExistMeteor;
 
     private float timer = 0f;
     public float minSpawnTime = 5f;
@@ -33,7 +36,8 @@ public class MeteorGenerator : MonoBehaviour
 
     public void SpawnMeteor()
     {
-        Instantiate(meteorPrefab[Random.Range(0, meteorPrefab.Length)], meteorSpawnPoints[Random.Range(0, meteorPrefab.Length)]);
+        GameObject temp = Instantiate(meteorPrefab[Random.Range(0, meteorPrefab.Length)], meteorSpawnPoints[Random.Range(0, meteorPrefab.Length)]);
+        curExistMeteor.Add(temp);
     }
 
     private float RandomSpawnTime()

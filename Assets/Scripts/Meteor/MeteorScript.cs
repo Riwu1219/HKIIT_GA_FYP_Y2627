@@ -6,7 +6,7 @@ public class MeteorScript : MonoBehaviour
     {
         if (collider.gameObject.CompareTag("Shutter"))
         {
-            
+            ShutterGameManager.instance.OnMeteorHit(this.gameObject);
             Debug.Log("Meteor hit the player!, Lose");
         }
     }

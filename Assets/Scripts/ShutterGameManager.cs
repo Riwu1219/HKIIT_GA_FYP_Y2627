@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class ShutterGameManager : MonoBehaviour
 {
+    public static ShutterGameManager instance;
+
     [SerializeField]
     MeteorGenerator meteorGenerator;
     [SerializeField]
@@ -14,7 +16,11 @@ public class ShutterGameManager : MonoBehaviour
     float speed = 1f;
     float horizontalInput;
     float verticalInput;
-    
+
+    private void Awake()
+    {
+        instance = this;
+    }
 
     private void Start()
     {
@@ -34,10 +40,17 @@ public class ShutterGameManager : MonoBehaviour
     }
 
 
-    void OnMeteorHit()
+    public void OnMeteorHit(GameObject meteor)
     {
         meteorGenerator.isMeteorGenerate = false;
-                
+        if (meteorGenerator.curExistMeteor.Contains(meteor))
+        {
+            meteorGenerator.curExistMeteor.Remove(meteor);
+            Destroy(meteor);
+        }
+        
+        // TODO: Lose condition, Back to meteor dodge start.
+
     }
 
 }
