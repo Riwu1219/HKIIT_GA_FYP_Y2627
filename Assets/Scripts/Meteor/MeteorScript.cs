@@ -16,16 +16,26 @@ public class MeteorScript : MonoBehaviour
 
     void Start()
     {
+        UI_Icon = Instantiate(UI_Icon);
+        UI_Icon.transform.SetParent(GameObject.Find("Canvas").transform);
+        UI_Icon.transform.localPosition = Vector2.zero;
+
         transform.localScale = new Vector3(size, size, size);
-        UI_Icon.transform.localScale = new Vector2(size, size);
     }
 
     void Update()
     {
+        
+        UI_Icon.transform.localPosition = new Vector2(transform.position.x, transform.position.z);
         transform.Translate(Vector3.back * speed * Time.deltaTime);
-        if (transform.position.y < -10f)
+        if (transform.position.z < -10f)
         {
             Destroy(gameObject);
         }
+    }
+
+    private void OnDestroy()
+    {
+        Destroy(UI_Icon);
     }
 }

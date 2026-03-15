@@ -43,14 +43,12 @@ public class ShutterGameManager : MonoBehaviour
     public void OnMeteorHit(GameObject meteor)
     {
         meteorGenerator.isMeteorGenerate = false;
-        if (meteorGenerator.curExistMeteor.Contains(meteor))
-        {
-            meteorGenerator.curExistMeteor.Remove(meteor);
-            Destroy(meteor);
-        }
-        
+        Destroy(meteor);
         // TODO: Lose condition, Back to meteor dodge start.
-
     }
+
+
+
+
 
 }
