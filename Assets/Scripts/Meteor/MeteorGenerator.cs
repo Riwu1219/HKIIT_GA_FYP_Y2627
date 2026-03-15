@@ -5,6 +5,7 @@ public class MeteorGenerator : MonoBehaviour
     bool isMeteorDodging = false;
 
     public GameObject[] meteorPrefab;
+    public Sprite meteorUISpritePrefab;
     public Transform[] meteorSpawnPoints;
 
     private float timer = 0f;
