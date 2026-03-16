@@ -37,7 +37,8 @@ public class MeteorGenerator : MonoBehaviour
     public void SpawnMeteor()
     {
         GameObject temp = Instantiate(meteorPrefab[Random.Range(0, meteorPrefab.Length)], meteorSpawnPoints[Random.Range(0, meteorPrefab.Length)]);
-        
+        temp.GetComponent<MeteorScript>().Init(Random.Range(5f, 15f), Random.Range(1f, 3f));
+
     }
 
     private float RandomSpawnTime()

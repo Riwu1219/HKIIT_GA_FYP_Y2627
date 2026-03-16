@@ -9,6 +9,10 @@ public class ShutterGameManager : MonoBehaviour
     [SerializeField]
     GameObject shutter;
     Rigidbody shutterRb;
+    [SerializeField]
+    RectTransform UI_Grid;
+
+    public float spaceScale = 10f;
 
     bool isDriving = true;
 
@@ -31,8 +35,22 @@ public class ShutterGameManager : MonoBehaviour
     {
         if (isDriving) 
         {
+            
             horizontalInput = Input.GetAxis("Horizontal");
             verticalInput = Input.GetAxis("Vertical");
+
+            if (shutter.transform.position.x > spaceScale && horizontalInput > 0)
+            {
+                horizontalInput = 0;
+                shutterRb.linearVelocity = Vector3.zero;
+            }
+            if (shutter.transform.position.x < -spaceScale && horizontalInput < 0)
+            {
+                horizontalInput = 0;
+                shutterRb.linearVelocity = Vector3.zero;
+            }
+
+            UI_Grid.anchoredPosition = new Vector2(shutter.transform.position.x * -(100 / spaceScale), UI_Grid.anchoredPosition.y);
             shutterRb.linearVelocity = new Vector3(horizontalInput * speed, verticalInput * speed, 0);
         }
 
