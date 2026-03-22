@@ -3,12 +3,12 @@ using UnityEngine;
 public class ShutterGameManager : MonoBehaviour
 {
     public static ShutterGameManager instance;
+    public MeteorGenerator meteorGenerator;
 
-    [SerializeField]
-    MeteorGenerator meteorGenerator;
     [SerializeField]
     GameObject shutter;
     Rigidbody shutterRb;
+
     [SerializeField]
     RectTransform UI_Grid;
 

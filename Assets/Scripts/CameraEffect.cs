@@ -4,9 +4,10 @@ using Unity.VisualScripting;
 
 public class CameraEffect : MonoBehaviour
 {
-    public float shakeDuration = 0.5f;
+    //Default values
+    public float shakeDuration = 0.7f;
     public float shakeMagnitude = 0.1f;
-    public float dampingSpeed = 1.0f;
+    public float dampingSpeed = -5f;
 
     
     
@@ -17,15 +18,15 @@ public class CameraEffect : MonoBehaviour
 
     private IEnumerator CameraShake(float _shakeDuration, float _shakeMagnitude, float _dampingSpeed)
     {
-        float elapsedTime = 0.0f;
+        float elapsedTime = 0f;
         //Vector3 initPos = transform.localPosition;
         Vector3 initPos = Vector3.zero;
 
         while(elapsedTime < _shakeDuration)
         {
             float magnitude = _shakeMagnitude * Mathf.Exp(_dampingSpeed * elapsedTime);
-            float xOffset = Random.Range(-1f, 1f) * _shakeMagnitude;
-            float yOffset = Random.Range(-1f, 1f) * _shakeMagnitude;
+            float xOffset = Random.Range(-1f, 1f) * magnitude;
+            float yOffset = Random.Range(-1f, 1f) * magnitude;
 
             transform.localPosition = new Vector3(initPos.x + xOffset, initPos.y + yOffset, initPos.z);
             elapsedTime += Time.deltaTime;
