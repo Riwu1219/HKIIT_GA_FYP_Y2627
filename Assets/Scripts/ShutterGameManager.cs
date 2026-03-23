@@ -79,8 +79,8 @@ public class ShutterGameManager : MonoBehaviour
 
                 Quaternion target = Quaternion.Euler(x, 0f, 0f);
 
-                transform.localRotation = Quaternion.Lerp(
-                    transform.localRotation,
+                shutter.transform.localRotation = Quaternion.Lerp(
+                    shutter.transform.localRotation,
                     target,
                     Time.deltaTime * lerpSpeed
                 );
@@ -89,8 +89,8 @@ public class ShutterGameManager : MonoBehaviour
             {
                 // return to neutral
                 Quaternion target = Quaternion.Euler(0f, 0f, 0f);
-                transform.localRotation = Quaternion.Lerp(
-                    transform.localRotation,
+                shutter.transform.localRotation = Quaternion.Lerp(
+                    shutter.transform.localRotation,
                     target,
                     Time.deltaTime * lerpSpeed
                 );
