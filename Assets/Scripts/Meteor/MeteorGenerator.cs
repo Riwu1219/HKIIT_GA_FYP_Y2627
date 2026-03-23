@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 public class MeteorGenerator : MonoBehaviour
 {
+    public static MeteorGenerator instance;
     public bool isMeteorGenerate = false;
 
     public GameObject[] meteorPrefab;
@@ -18,6 +19,13 @@ public class MeteorGenerator : MonoBehaviour
     [Header("MeteorSetting")]
     public Vector2 speedRange;
     public Vector2 sizeRange;
+
+    public float meteorCount = 0;
+
+    private void Awake()
+    {
+        instance = this;
+    }
 
     private void Start()
     {
@@ -53,6 +61,7 @@ public class MeteorGenerator : MonoBehaviour
 
         GameObject temp = Instantiate(meteorPrefab[Random.Range(0, meteorPrefab.Length)], spawnPos_Rand, Quaternion.identity);
         temp.GetComponent<MeteorScript>().Init(Random.Range(sizeRange.x, sizeRange.y), Random.Range(speedRange.x, speedRange.y));
+        meteorCount++;
 
     }
 

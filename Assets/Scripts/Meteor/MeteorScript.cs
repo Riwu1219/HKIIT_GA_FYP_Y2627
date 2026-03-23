@@ -21,8 +21,9 @@ public class MeteorScript : MonoBehaviour
     void Start()
     {
         mT = transform.GetChild(0).gameObject;
+        mT.transform.localRotation = Quaternion.Euler(Random.Range(0, 360), Random.Range(0, 360), Random.Range(0, 360));
         randRotSpeed = Random.Range(15f, 50f);
-        Debug.Log(randRotSpeed);
+        //Debug.Log(randRotSpeed);
         randRot = new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), Random.Range(-1f, 1f)); ;
 
 
@@ -38,7 +39,17 @@ public class MeteorScript : MonoBehaviour
         if (transform.position.z < -10f)
         {
             Destroy(gameObject);
+            MeteorGenerator.instance.meteorCount--;
         }
     }
 
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Shutter"))
+        {
+            Destroy(gameObject);
+            MeteorGenerator.instance.meteorCount--;
+            ShutterGameManager.instance.OnMeteorHit(gameObject);
+        }
+    }
 }

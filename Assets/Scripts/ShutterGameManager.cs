@@ -8,6 +8,9 @@ public class ShutterGameManager : MonoBehaviour
     [SerializeField]
     GameObject shutter;
     Rigidbody shutterRb;
+    public float hp = 100f;
+    public float damageMultiplier = 1f;
+    public CameraEffect cameraEffect;
 
     [SerializeField]
     RectTransform UI_Grid;
@@ -61,11 +64,23 @@ public class ShutterGameManager : MonoBehaviour
     public void OnMeteorHit(GameObject meteor)
     {
         meteorGenerator.isMeteorGenerate = false;
+        TakeDamage(meteor.transform.localScale.x * damageMultiplier);
+        cameraEffect.TriggerShake(cameraEffect.shakeDuration, cameraEffect.shakeMagnitude * (meteor.transform.localScale.x), cameraEffect.dampingSpeed);
         Destroy(meteor);
         // TODO: Lose condition, Back to meteor dodge start.
     }
 
-
+    public void TakeDamage(float damage)
+    {
+        hp -= damage;
+        if (hp <= 0)
+        {
+            hp = 0;
+            ShutterGameManager.instance.meteorGenerator.isMeteorGenerate = false;
+            Debug.Log("Shutter destroyed!");
+            //TODO: Lose condition, Back to meteor dodge start.
+        }
+    }
 
 
 

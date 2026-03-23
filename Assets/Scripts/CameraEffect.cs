@@ -40,6 +40,7 @@ public class CameraEffect : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //for testing purposes, trigger shake on space key press
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Debug.Log("Space key was pressed. Triggering camera shake.");
