@@ -63,7 +63,6 @@ public class ShutterGameManager : MonoBehaviour
 
     public void OnMeteorHit(GameObject meteor)
     {
-        meteorGenerator.isMeteorGenerate = false;
         TakeDamage(meteor.transform.localScale.x * damageMultiplier);
         cameraEffect.TriggerShake(cameraEffect.shakeDuration, cameraEffect.shakeMagnitude * (meteor.transform.localScale.x), cameraEffect.dampingSpeed);
         Destroy(meteor);

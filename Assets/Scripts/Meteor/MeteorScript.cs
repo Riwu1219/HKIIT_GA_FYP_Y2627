@@ -43,13 +43,13 @@ public class MeteorScript : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter(Collider other)
+    void OnCollisionEnter(Collision collider)
     {
-        if (other.CompareTag("Shutter"))
+        if (collider.gameObject.CompareTag("Player"))
         {
-            Destroy(gameObject);
-            MeteorGenerator.instance.meteorCount--;
             ShutterGameManager.instance.OnMeteorHit(gameObject);
+            MeteorGenerator.instance.meteorCount--;
+            Destroy(gameObject);
         }
     }
 }
