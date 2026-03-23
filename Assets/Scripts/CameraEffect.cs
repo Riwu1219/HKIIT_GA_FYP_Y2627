@@ -9,8 +9,23 @@ public class CameraEffect : MonoBehaviour
     public float shakeMagnitude = 0.1f;
     public float dampingSpeed = -5f;
 
-    
-    
+    public GameObject Fader;
+
+    private void Start()
+    {
+        
+    }
+
+    public void CameraFadeTran()
+    {
+        Fader.GetComponent<Animator>().Play("CameraFadeTran");
+    }
+
+    public void CameraFadeBlack()
+    {
+        Fader.GetComponent<Animator>().Play("CameraFadeBlack");
+    }
+
     public void TriggerShake(float _shakeDuration, float _shakeMagnitude, float _dampingSpeed)
     {
         StartCoroutine(CameraShake(_shakeDuration, _shakeMagnitude, _dampingSpeed));

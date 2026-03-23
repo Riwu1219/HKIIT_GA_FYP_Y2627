@@ -35,11 +35,13 @@ public class ShutterGameManager : MonoBehaviour
 
     private void Start()
     {
+        cameraEffect.CameraFadeTran();
         shutterRb = shutter.GetComponent<Rigidbody>();
     }
 
     private void OnLevelWasLoaded(int level)
     {
+        
         //TODO : Story
     }
 
@@ -134,6 +136,7 @@ public class ShutterGameManager : MonoBehaviour
         if (hp <= 0)
         {
             hp = 0;
+            cameraEffect.CameraFadeBlack();
             meteorGenerator.isMeteorGenerate = false;
             Debug.Log("Shutter destroyed!");
             //TODO: Lose condition, Back to meteor dodge start.
