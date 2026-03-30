@@ -5,15 +5,26 @@ using Unity.VisualScripting;
 public class CameraEffect : MonoBehaviour
 {
     //Default values
+    [Header("Shake")]
     public float shakeDuration = 0.7f;
     public float shakeMagnitude = 0.1f;
     public float dampingSpeed = -5f;
 
+    [Header("Fade")]
     public GameObject Fader;
+
+    [Header("Warning Effect")]
+    public GameObject WarningEffect;
+    private Material warningShaderMat;
 
     private void Start()
     {
-        
+        warningShaderMat = WarningEffect.GetComponent<Renderer>().material;
+    }
+
+    public void CameraWarningEffect(Vector3 position)
+    {
+        warningShaderMat.SetVector("_CurPosition", position);
     }
 
     public void CameraFadeTran()

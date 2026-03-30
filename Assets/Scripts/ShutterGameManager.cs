@@ -11,13 +11,9 @@ public class ShutterGameManager : MonoBehaviour
     Rigidbody shutterRb;
     [SerializeField] private float lerpSpeed = 10f;
     [SerializeField] private float tiltAngle = 15f;
-    public float hp = 100f;
+    public float energy = 100f;
     public float damageMultiplier = 1f;
     public CameraEffect cameraEffect;
-    
-
-    [SerializeField]
-    RectTransform UI_Grid;
 
     public float spaceScale = 10f;
 
@@ -47,6 +43,7 @@ public class ShutterGameManager : MonoBehaviour
 
     private void Update()
     {
+        cameraEffect.CameraWarningEffect(shutter.transform.position);
         if (isDriving) 
         {
             
@@ -109,7 +106,6 @@ public class ShutterGameManager : MonoBehaviour
                 shutterRb.linearVelocity = Vector3.zero;
             }
 
-            UI_Grid.anchoredPosition = new Vector2(shutter.transform.position.x * -(100 / spaceScale), UI_Grid.anchoredPosition.y);
             shutterRb.linearVelocity = new Vector3(horizontalInput * speed, verticalInput * speed, 0);
         }
 
@@ -132,18 +128,20 @@ public class ShutterGameManager : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        hp -= damage;
-        if (hp <= 0)
+        energy -= damage;
+        if (energy <= 0)
         {
-            hp = 0;
-            cameraEffect.CameraFadeBlack();
-            meteorGenerator.isMeteorGenerate = false;
-            Debug.Log("Shutter destroyed!");
-            //TODO: Lose condition, Back to meteor dodge start.
-            Invoke("RestartLevel", 3f);
+            OnLose();
         }
     }
 
-
+    private void OnLose()
+    {
+        energy = 0;
+        cameraEffect.CameraFadeBlack();
+        meteorGenerator.isMeteorGenerate = false;
+        //TODO: Lose condition, Back to meteor dodge start.
+        Invoke("RestartLevel", 3f);
+    }
 
 }
