@@ -1,13 +1,14 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class ShutterGameManager : MonoBehaviour
 {
     public static ShutterGameManager instance;
     public MeteorGenerator meteorGenerator;
 
-    [SerializeField]
-    GameObject shutter;
+    [Header("Shutter Setting")]
+    [SerializeField] GameObject shutter;
     Rigidbody shutterRb;
     [SerializeField] private float lerpSpeed = 10f;
     [SerializeField] private float tiltAngle = 15f;
@@ -15,14 +16,19 @@ public class ShutterGameManager : MonoBehaviour
     public float damageMultiplier = 1f;
     public CameraEffect cameraEffect;
 
-    public float spaceScale = 10f;
+    public float spaceScale = 50f;
 
     bool isDriving = true;
 
-    [SerializeField]
-    float speed = 1f;
+    [SerializeField] float speed = 1f;
     float horizontalInput;
     float verticalInput;
+
+    [Header("Shutter Energy")]
+    [SerializeField] Slider energyBar;
+    public float energyDecreaseSpeed = 0.1f;
+
+
 
     private void Awake()
     {
@@ -43,7 +49,18 @@ public class ShutterGameManager : MonoBehaviour
 
     private void Update()
     {
+        // Energy decrease over time, faster while travel too far from center
+        float multiplier = 1f;
+        if (Mathf.Abs(shutter.transform.position.x) > spaceScale || Mathf.Abs(shutter.transform.position.y) > spaceScale)
+        {
+            multiplier = Vector2.Distance(shutter.transform.position, Vector2.zero) * 1.5f - spaceScale;
+        }
+        TakeDamage(energyDecreaseSpeed * multiplier * Time.deltaTime);
+
+        // Shader Update
         cameraEffect.CameraWarningEffect(shutter.transform.position);
+
+        // Shutter Control
         if (isDriving) 
         {
             
@@ -126,18 +143,24 @@ public class ShutterGameManager : MonoBehaviour
         // TODO: Lose condition, Back to meteor dodge start.
     }
 
+    private void RefreshEnergyUI()
+    {
+        energyBar.value = energy;
+    }
+
     public void TakeDamage(float damage)
     {
         energy -= damage;
         if (energy <= 0)
         {
+            energy = 0;
             OnLose();
         }
+        RefreshEnergyUI();
     }
 
     private void OnLose()
     {
-        energy = 0;
         cameraEffect.CameraFadeBlack();
         meteorGenerator.isMeteorGenerate = false;
         //TODO: Lose condition, Back to meteor dodge start.

@@ -5923,17 +5923,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 576852201}
-  m_LocalRotation: {x: 0.2468875, y: -0, z: -0, w: 0.9690442}
-  m_LocalPosition: {x: 0, y: 0, z: 3.496}
+  m_LocalRotation: {x: 0.17364816, y: 0, z: 0, w: 0.9848078}
+  m_LocalPosition: {x: 0, y: 0, z: 3.5}
   m_LocalScale: {x: 0.001, y: 0.0010000002, z: 0.0010000002}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 917929750}
   m_Father: {fileID: 873381267}
-  m_LocalEulerAnglesHint: {x: 28.587, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 20, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 1.1099987}
+  m_AnchoredPosition: {x: 0, y: 1.1}
   m_SizeDelta: {x: 1468, y: 629}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &603017174
@@ -6189,7 +6189,9 @@ MonoBehaviour:
   damageMultiplier: 1
   cameraEffect: {fileID: 1737460855}
   spaceScale: 50
-  speed: 2
+  speed: 4
+  energyBar: {fileID: 152742543}
+  energyDecreaseSpeed: 0.1
 --- !u!4 &846328462 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7738975316024994251, guid: e42a2a7cb280e484296cb3ff5f08ac3b, type: 3}
@@ -6221,7 +6223,7 @@ Transform:
   m_GameObject: {fileID: 873381266}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -14.5, z: -5}
+  m_LocalPosition: {x: 0, y: 0, z: -5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6570,14 +6572,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 985626526}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.08159059, y: 0, z: 0, w: 0.99666595}
-  m_LocalPosition: {x: 0, y: 1.27, z: 2.1}
+  m_LocalRotation: {x: 0.08715578, y: 0, z: 0, w: 0.9961947}
+  m_LocalPosition: {x: 0, y: 1.4, z: 2.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1737460853}
   m_Father: {fileID: 873381267}
-  m_LocalEulerAnglesHint: {x: 9.36, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 10, y: 0, z: 0}
 --- !u!1 &1041128576
 GameObject:
   m_ObjectHideFlags: 0
@@ -6701,7 +6703,7 @@ GameObject:
   - component: {fileID: 1104886073}
   - component: {fileID: 1104886074}
   m_Layer: 0
-  m_Name: MtGenerate
+  m_Name: MeteorGenerate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6743,7 +6745,7 @@ MonoBehaviour:
   - {fileID: 1424587078}
   - {fileID: 2009538977}
   minSpawnTime: 0.01
-  maxSpawnTime: 0.5
+  maxSpawnTime: 0.1
   randSpawnTime: 0
   speedRange: {x: 30, y: 70}
   sizeRange: {x: 1, y: 6}
@@ -7029,7 +7031,7 @@ Transform:
   m_GameObject: {fileID: 1424587077}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -25, y: 25, z: 100}
+  m_LocalPosition: {x: -50, y: 50, z: 300}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7500,7 +7502,7 @@ Transform:
   m_GameObject: {fileID: 1737460850}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.14, z: 0.42}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -8424,7 +8426,7 @@ Transform:
   m_GameObject: {fileID: 2009538976}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 25, y: -25, z: 90}
+  m_LocalPosition: {x: 50, y: -50, z: 200}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
