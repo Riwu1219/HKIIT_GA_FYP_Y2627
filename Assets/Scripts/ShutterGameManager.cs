@@ -28,6 +28,8 @@ public class ShutterGameManager : MonoBehaviour
     [SerializeField] Slider energyBar;
     public float energyDecreaseSpeed = 0.1f;
 
+    [SerializeField] GameObject meteorDust;
+
 
 
     private void Awake()
@@ -49,28 +51,27 @@ public class ShutterGameManager : MonoBehaviour
 
     private void Update()
     {
-        // Energy decrease over time, faster while travel too far from center
-        float multiplier = 1f;
-        if (Mathf.Abs(shutter.transform.position.x) > spaceScale || Mathf.Abs(shutter.transform.position.y) > spaceScale)
-        {
-            multiplier = Vector2.Distance(shutter.transform.position, Vector2.zero) * 1.5f - spaceScale;
-        }
-        TakeDamage(energyDecreaseSpeed * multiplier * Time.deltaTime);
-
         // Shader Update
         cameraEffect.CameraWarningEffect(shutter.transform.position);
 
         // Shutter Control
         if (isDriving) 
         {
-            
+            // Energy decrease over time, faster while travel too far from center
+            float multiplier = 1f;
+            if (Mathf.Abs(shutter.transform.position.x) > spaceScale || Mathf.Abs(shutter.transform.position.y) > spaceScale)
+            {
+                multiplier = Vector2.Distance(shutter.transform.position, Vector2.zero) * 1.5f - spaceScale;
+            }
+            TakeDamage(energyDecreaseSpeed * multiplier * Time.deltaTime);
+
             horizontalInput = Input.GetAxis("Horizontal");
             verticalInput = Input.GetAxis("Vertical");
 
             if (Mathf.Abs(horizontalInput) > 0.01f)
             {
-                float z = (horizontalInput > 0) ? -tiltAngle : tiltAngle; // right = -, left = +
-                Quaternion target = Quaternion.Euler(0f, 0f, z);
+                float y = (horizontalInput > 0) ? tiltAngle : -tiltAngle; // left = + , right = -
+                Quaternion target = Quaternion.Euler(0f, y, 0f);
 
                 shutter.transform.localRotation = Quaternion.Lerp(
                     shutter.transform.localRotation,
@@ -124,9 +125,15 @@ public class ShutterGameManager : MonoBehaviour
             }
 
             shutterRb.linearVelocity = new Vector3(horizontalInput * speed, verticalInput * speed, 0);
-        }
 
-        
+            // Meteor Dust Rotation
+            Vector3 temp = shutter.transform.rotation.eulerAngles;
+            meteorDust.transform.rotation = Quaternion.Euler(
+                (temp.x + 180),
+                temp.y,
+                temp.z * -1f
+            );
+        }  
     }
 
     private void RestartLevel()
