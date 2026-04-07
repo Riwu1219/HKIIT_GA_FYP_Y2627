@@ -7,7 +7,7 @@ TerrainLayer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: MoonLand
-  m_DiffuseTexture: {fileID: 2800000, guid: a41b02db891b5e24ea6b06d9f5e64365, type: 3}
+  m_DiffuseTexture: {fileID: 2800000, guid: 6eb3162ea87a59d4ba96194f5d243318, type: 3}
   m_NormalMapTexture: {fileID: 2800000, guid: 7e6eb5609ea80b246b6d68fc0f1b41cc, type: 3}
   m_MaskMapTexture: {fileID: 2800000, guid: a961f9e6e666d9e41819c62315079298, type: 3}
   m_TileSize: {x: 5, y: 5}

@@ -217,7 +217,7 @@
         "preventRotation": false
     },
     "m_Path": "Shader Graphs",
-    "m_GraphPrecision": 0,
+    "m_GraphPrecision": 2,
     "m_PreviewMode": 2,
     "m_OutputNode": {
         "m_Id": ""
@@ -766,7 +766,7 @@
     "m_SGVersion": 0,
     "m_Type": "UnityEditor.Rendering.HighDefinition.ShaderGraph.HDCanvasData",
     "m_ObjectId": "4cf78b6e8a8c4cbfafa3e2e14a6ff719",
-    "supportsMotionVectors": true
+    "supportsMotionVectors": false
 }
 
 {
@@ -1139,8 +1139,8 @@
     "m_StageCapability": 2,
     "m_Value": {
         "x": 0.0,
-        "y": 93.86936950683594,
-        "z": 98.48126220703125
+        "y": 23.467342376708986,
+        "z": 24.620315551757814
     },
     "m_DefaultValue": {
         "x": 0.0,

@@ -68,9 +68,9 @@ public class ShutterGameManager : MonoBehaviour
             horizontalInput = Input.GetAxis("Horizontal");
             verticalInput = Input.GetAxis("Vertical");
 
-            if (Mathf.Abs(horizontalInput) > 0.01f)
+            if (Mathf.Abs(horizontalInput) > 0.1f)
             {
-                float y = (horizontalInput > 0) ? tiltAngle : -tiltAngle; // left = + , right = -
+                float y = (horizontalInput > 0.1f) ? tiltAngle : -tiltAngle; // left = + , right = -
                 Quaternion target = Quaternion.Euler(0f, y, 0f);
 
                 shutter.transform.localRotation = Quaternion.Lerp(
@@ -89,10 +89,10 @@ public class ShutterGameManager : MonoBehaviour
                     Time.deltaTime * lerpSpeed
                 );
             }
-            if (Mathf.Abs(verticalInput) > 0.01f)
+            if (Mathf.Abs(verticalInput) > 0.1f)
             {
                 // up = -20, down = +20 (flip signs if you want the opposite)
-                float x = (verticalInput > 0) ? -tiltAngle : tiltAngle;
+                float x = (verticalInput > 0.1f) ? -tiltAngle : tiltAngle;
 
                 Quaternion target = Quaternion.Euler(x, 0f, 0f);
 

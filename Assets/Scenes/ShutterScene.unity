@@ -5770,15 +5770,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4890553676988468478, guid: 74150cdadfdcb52449d9be3b0ff5178e, type: 3}
       propertyPath: m_LocalScale.x
-      value: 8000
+      value: 5000
       objectReference: {fileID: 0}
     - target: {fileID: 4890553676988468478, guid: 74150cdadfdcb52449d9be3b0ff5178e, type: 3}
       propertyPath: m_LocalScale.y
-      value: 8000
+      value: 5000
       objectReference: {fileID: 0}
     - target: {fileID: 4890553676988468478, guid: 74150cdadfdcb52449d9be3b0ff5178e, type: 3}
       propertyPath: m_LocalScale.z
-      value: 8000
+      value: 5000
       objectReference: {fileID: 0}
     - target: {fileID: 4890553676988468478, guid: 74150cdadfdcb52449d9be3b0ff5178e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6187,7 +6187,7 @@ MonoBehaviour:
   tiltAngle: 15
   energy: 100
   damageMultiplier: 1
-  cameraEffect: {fileID: 1737460855}
+  cameraEffect: {fileID: 1942613349}
   spaceScale: 50
   speed: 4
   energyBar: {fileID: 152742543}
@@ -6564,7 +6564,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &985626527
 Transform:
   m_ObjectHideFlags: 0
@@ -7052,19 +7052,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1840973896978598212, guid: e42a2a7cb280e484296cb3ff5f08ac3b, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1918003224384098314, guid: e42a2a7cb280e484296cb3ff5f08ac3b, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2927822718893812217, guid: e42a2a7cb280e484296cb3ff5f08ac3b, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5264161478063144950, guid: e42a2a7cb280e484296cb3ff5f08ac3b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5591741852942495050, guid: e42a2a7cb280e484296cb3ff5f08ac3b, type: 3}
+      propertyPath: clearColorMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5591741852942495050, guid: e42a2a7cb280e484296cb3ff5f08ac3b, type: 3}
+      propertyPath: allowDynamicResolution
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6581281794747026216, guid: e42a2a7cb280e484296cb3ff5f08ac3b, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7738975316024994251, guid: e42a2a7cb280e484296cb3ff5f08ac3b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.50126
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7738975316024994251, guid: e42a2a7cb280e484296cb3ff5f08ac3b, type: 3}
       propertyPath: m_LocalPosition.y
@@ -7102,6 +7118,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7888636141702368489, guid: e42a2a7cb280e484296cb3ff5f08ac3b, type: 3}
+      propertyPath: m_Name
+      value: Main Camera VR
+      objectReference: {fileID: 0}
+    - target: {fileID: 7888636141702368495, guid: e42a2a7cb280e484296cb3ff5f08ac3b, type: 3}
+      propertyPath: far clip plane
+      value: 5000
+      objectReference: {fileID: 0}
+    - target: {fileID: 7888636141702368495, guid: e42a2a7cb280e484296cb3ff5f08ac3b, type: 3}
+      propertyPath: m_AllowDynamicResolution
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7900454198383483388, guid: e42a2a7cb280e484296cb3ff5f08ac3b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8294911845355031510, guid: e42a2a7cb280e484296cb3ff5f08ac3b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8839851748545140150, guid: e42a2a7cb280e484296cb3ff5f08ac3b, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.8
@@ -7120,7 +7156,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9016760960692147252, guid: e42a2a7cb280e484296cb3ff5f08ac3b, type: 3}
       propertyPath: m_RequestedTrackingOriginMode
-      value: 2
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9168334691931226462, guid: e42a2a7cb280e484296cb3ff5f08ac3b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -8229,6 +8269,17 @@ MonoBehaviour:
   dampingSpeed: -5
   Fader: {fileID: 1041128576}
   WarningEffect: {fileID: 646733655}
+--- !u!114 &1942613349 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 951731745909001631, guid: e42a2a7cb280e484296cb3ff5f08ac3b, type: 3}
+  m_PrefabInstance: {fileID: 1434438414}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1942613339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75379031c5c65cf4791fecb7d4bb99e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CameraEffect
 --- !u!1 &1993083880
 GameObject:
   m_ObjectHideFlags: 0

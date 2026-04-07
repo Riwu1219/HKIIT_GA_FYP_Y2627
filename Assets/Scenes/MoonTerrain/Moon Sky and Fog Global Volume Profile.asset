@@ -17,7 +17,7 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: 1
   enabled:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 1
   colorMode:
     m_OverrideState: 1
@@ -59,7 +59,7 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: 1
   depthExtent:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 1.2
   denoisingMode:
     m_OverrideState: 0
