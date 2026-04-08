@@ -410,7 +410,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MoonSceneManager
   volume: {fileID: 526045518}
   universalTimeScale: 1
-  cameraEffect: {fileID: 0}
+  cameraEffect: {fileID: 2066532336}
 --- !u!114 &189701248 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4341004869713663663, guid: 3b4ff7cb82117f94992435ee41b41dac, type: 3}
@@ -430,17 +430,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2253290120667620400, guid: e950153e93300a748beeb31f431d56b3, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5324519664647219918, guid: e950153e93300a748beeb31f431d56b3, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6840128927728608900, guid: e950153e93300a748beeb31f431d56b3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 199.69281
+      value: 200.44
       objectReference: {fileID: 0}
     - target: {fileID: 6840128927728608900, guid: e950153e93300a748beeb31f431d56b3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 189.5173
+      value: 189.4
       objectReference: {fileID: 0}
     - target: {fileID: 6840128927728608900, guid: e950153e93300a748beeb31f431d56b3, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 413.4081
+      value: 418.1
       objectReference: {fileID: 0}
     - target: {fileID: 6840128927728608900, guid: e950153e93300a748beeb31f431d56b3, type: 3}
       propertyPath: m_LocalRotation.w
@@ -473,6 +481,14 @@ PrefabInstance:
     - target: {fileID: 6840128927728608903, guid: e950153e93300a748beeb31f431d56b3, type: 3}
       propertyPath: m_Name
       value: XR Origin (XR Rig)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7876370966278474948, guid: e950153e93300a748beeb31f431d56b3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8661388234903404172, guid: e950153e93300a748beeb31f431d56b3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -547,7 +563,7 @@ GameObject:
   - component: {fileID: 274084441}
   - component: {fileID: 274084440}
   m_Layer: 0
-  m_Name: test
+  m_Name: VR Tester
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -565,7 +581,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a22f26098b01334c93a7b0feacb94f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  buttonAction: {fileID: 0}
+  buttonAction: {fileID: -3599823989380923159, guid: 0be0028c24f2a4c14a96b6aa39055933, type: 3}
 --- !u!4 &274084441
 Transform:
   m_ObjectHideFlags: 0
@@ -935,6 +951,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6840128927728608903, guid: e950153e93300a748beeb31f431d56b3, type: 3}
   m_PrefabInstance: {fileID: 213145010}
   m_PrefabAsset: {fileID: 0}
+--- !u!143 &467720800 stripped
+CharacterController:
+  m_CorrespondingSourceObject: {fileID: 2253290120667620400, guid: e950153e93300a748beeb31f431d56b3, type: 3}
+  m_PrefabInstance: {fileID: 213145010}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &498401761
 GameObject:
   m_ObjectHideFlags: 0
@@ -1114,6 +1135,11 @@ Transform:
 Transform:
   m_CorrespondingSourceObject: {fileID: 1292110362578523942, guid: 169b3561673e6c14b9e96b03c6222e23, type: 3}
   m_PrefabInstance: {fileID: 1792724801}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &596746439 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5329377093023100966, guid: e950153e93300a748beeb31f431d56b3, type: 3}
+  m_PrefabInstance: {fileID: 213145010}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &705506651
 GameObject:
@@ -2670,6 +2696,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 74150cdadfdcb52449d9be3b0ff5178e, type: 3}
+--- !u!114 &2066532336 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2987374924409831085, guid: e950153e93300a748beeb31f431d56b3, type: 3}
+  m_PrefabInstance: {fileID: 213145010}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75379031c5c65cf4791fecb7d4bb99e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CameraEffect
 --- !u!1001 &2093714436
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2757,15 +2794,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 730226076518076592, guid: 3b4ff7cb82117f94992435ee41b41dac, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 730226076518076592, guid: 3b4ff7cb82117f94992435ee41b41dac, type: 3}
-      propertyPath: m_LocalRotation.y
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 730226076518076592, guid: 3b4ff7cb82117f94992435ee41b41dac, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 730226076518076592, guid: 3b4ff7cb82117f94992435ee41b41dac, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3327739163132433778, guid: 3b4ff7cb82117f94992435ee41b41dac, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2812,6 +2849,10 @@ PrefabInstance:
       value: MoonRover
       objectReference: {fileID: 0}
     - target: {fileID: 4341004869713663663, guid: 3b4ff7cb82117f94992435ee41b41dac, type: 3}
+      propertyPath: cc
+      value: 
+      objectReference: {fileID: 467720800}
+    - target: {fileID: 4341004869713663663, guid: 3b4ff7cb82117f94992435ee41b41dac, type: 3}
       propertyPath: sit_pos
       value: 
       objectReference: {fileID: 1023787961}
@@ -2832,6 +2873,10 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4341004869713663663, guid: 3b4ff7cb82117f94992435ee41b41dac, type: 3}
+      propertyPath: controllerInteractionBind
+      value: 
+      objectReference: {fileID: -3599823989380923159, guid: 0be0028c24f2a4c14a96b6aa39055933, type: 3}
+    - target: {fileID: 4341004869713663663, guid: 3b4ff7cb82117f94992435ee41b41dac, type: 3}
       propertyPath: 'ControlObject.Array.data[0]'
       value: 
       objectReference: {fileID: 0}
@@ -2847,6 +2892,22 @@ PrefabInstance:
       propertyPath: 'ControlObject.Array.data[3]'
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 4341004869713663663, guid: 3b4ff7cb82117f94992435ee41b41dac, type: 3}
+      propertyPath: DisableOnDriveObject.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4341004869713663663, guid: 3b4ff7cb82117f94992435ee41b41dac, type: 3}
+      propertyPath: 'DisableOnDriveObject.Array.data[0]'
+      value: 
+      objectReference: {fileID: 596746439}
+    - target: {fileID: 4341004869713663663, guid: 3b4ff7cb82117f94992435ee41b41dac, type: 3}
+      propertyPath: LocomotionControlObject.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4341004869713663663, guid: 3b4ff7cb82117f94992435ee41b41dac, type: 3}
+      propertyPath: 'LocomotionControlObject.Array.data[0]'
+      value: 
+      objectReference: {fileID: 596746439}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
