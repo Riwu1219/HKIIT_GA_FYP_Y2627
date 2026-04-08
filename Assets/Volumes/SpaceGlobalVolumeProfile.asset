@@ -278,7 +278,7 @@ MonoBehaviour:
     m_Value: {fileID: 0}
   chromaticAbberationIntensity:
     m_OverrideState: 1
-    m_Value: 0.107
+    m_Value: 0.213
   chromaticAbberationSampleCount:
     m_OverrideState: 0
     m_Value: 3

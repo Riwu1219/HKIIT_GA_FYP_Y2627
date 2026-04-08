@@ -1,5 +1,6 @@
 using Unity.XR.OpenVR;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class MoonRoverScript : MonoBehaviour
 {
@@ -11,9 +12,10 @@ public class MoonRoverScript : MonoBehaviour
 
     public bool isDriving = false;
     public GameObject interactBtn;
+    public InputActionReference controllerInteractionBind;
 
-    public OpenVROculusTouchController leftController;
-    public GameObject[] ControlObject;
+    public GameObject[] DisableOnDriveObject;
+    public CharacterController cc;
     public Transform sit_trans;
 
     private void Update()
@@ -22,6 +24,11 @@ public class MoonRoverScript : MonoBehaviour
 
         horizontalInput = Input.GetAxis("Horizontal");
         verticalInput = Input.GetAxis("Vertical");
+
+        if (controllerInteractionBind.action.WasPressedThisFrame())
+        {
+            ExitRover();
+        }
     }
 
     private void FixedUpdate()
@@ -38,9 +45,10 @@ public class MoonRoverScript : MonoBehaviour
     public void EnterRover()
     {
         driverPlayer.transform.SetParent(sit_trans);
-        foreach (var obj in ControlObject)
+        foreach (var obj in DisableOnDriveObject)
         {
             obj.SetActive(false);
+            cc.enabled = false;
         }
 
         driverPlayer.transform.position = sit_trans.position;
@@ -52,14 +60,15 @@ public class MoonRoverScript : MonoBehaviour
     public void ExitRover()
     {
         driverPlayer.transform.SetParent(null);
-        foreach (var obj in ControlObject)
+        foreach (var obj in DisableOnDriveObject)
         {
             obj.SetActive(true);
+            cc.enabled = true;
         }
 
         interactBtn.SetActive(true);
+        // Place the player next to the rover when exiting (Need adjustment)
         driverPlayer.transform.position = transform.position + transform.right * 2f;
         isDriving = false;
     }
-
 }

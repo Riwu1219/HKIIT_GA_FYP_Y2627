@@ -14,7 +14,8 @@ public class SpaceSceneManager : MonoBehaviour
     private float degreesPerSecond;
     public float universalTimeScale = 1f;
 
-    
+    public CameraEffect cameraEffect;
+
 
     private void Awake()
     {
@@ -31,6 +32,7 @@ public class SpaceSceneManager : MonoBehaviour
 
     void Start()
     {
+        cameraEffect.CameraFadeTran();
         volume.profile.TryGet(out hdriSky);
         degreesPerSecond = 360f / (siderealDays * 86400f);
     }
