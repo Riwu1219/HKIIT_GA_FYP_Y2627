@@ -4,9 +4,9 @@ using UnityEngine.Rendering;
 using UnityEngine.Rendering.HighDefinition;
 
 
-public class SpaceSceneManager : MonoBehaviour 
+public class MoonSceneManager : MonoBehaviour 
 {
-    public static SpaceSceneManager instance;
+    public static MoonSceneManager instance;
 
     public Volume volume;        // Assign your Sky and Fog Global Volume
     private HDRISky hdriSky;

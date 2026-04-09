@@ -23,14 +23,13 @@ public class ShutterGameManager : MonoBehaviour
         cameraEffect.CameraFadeTran();
     }
 
-    private void OnLevelWasLoaded(int level)
-    {
-        //TODO : Story
-    }
+    //private void OnLevelWasLoaded(int level)
+    //{
+    //    //TODO : Story
+    //}
 
     private void Update()
     {
-        // Shader Update
         cameraEffect.CameraWarningEffect(shutter.transform.position);
     }
 

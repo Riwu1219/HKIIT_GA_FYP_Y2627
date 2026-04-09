@@ -5974,7 +5974,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Earth
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8872979002691209405, guid: 74150cdadfdcb52449d9be3b0ff5178e, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -6348,7 +6349,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 806126905}
-  - component: {fileID: 806126906}
   - component: {fileID: 806126907}
   m_Layer: 0
   m_Name: SceneManager
@@ -6372,21 +6372,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2082844318}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &806126906
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 806126904}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 933572508bd848841a072ce4ac8f0139, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MoonSceneManager
-  volume: {fileID: 1206866446}
-  universalTimeScale: 1
-  cameraEffect: {fileID: 0}
 --- !u!114 &806126907
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6470,7 +6455,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 0
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
@@ -6500,9 +6485,9 @@ MonoBehaviour:
   interactionBtnOnHover: 0
   isDriving: 0
   rb: {fileID: 873381268}
-  speed: 1
-  lerpSpeed: 10
-  tiltAngle: 15
+  speed: 10
+  maxRotAngle: 15
+  lerpSpeed: 1.5
   energyBar: {fileID: 152742543}
   energy: 100
   energyDecreaseSpeed: 0.1
@@ -6510,6 +6495,7 @@ MonoBehaviour:
   meteorDamageMultiper: 1
   meteorDust: {fileID: 427301589}
   cameraEffect: {fileID: 1141517307}
+  minDeadzone: 0.1
 --- !u!1 &917929749
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,6 +1,7 @@
-using Unity.Physics;
+using Unity.Entities.UniversalDelegates;
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEngine.GraphicsBuffer;
 
 public class ShutterScript : DrivingSystem
 {
@@ -10,8 +11,8 @@ public class ShutterScript : DrivingSystem
     [SerializeField] private Rigidbody rb;
     [SerializeField] private float speed = 1f;
     // may not in use, consider remove
-    [SerializeField] private float lerpSpeed = 10f;
-    [SerializeField] private float tiltAngle = 15f;
+    [SerializeField] private float maxRotAngle = 10f;
+    [SerializeField] private float lerpSpeed  = 15f;
     private float spaceScale = 50f;
 
     [Header("Shutter Energy")]
@@ -24,6 +25,9 @@ public class ShutterScript : DrivingSystem
     [Header("Effect")]
     [SerializeField] GameObject meteorDust;
     public CameraEffect cameraEffect;
+
+    [Header("Controller Setting")]
+    public float minDeadzone = 0.1f;
 
     void Awake()
     {
@@ -45,7 +49,7 @@ public class ShutterScript : DrivingSystem
         // Energy decrease over time, faster while travel too far from center
 
         EnengyDecreaseOverTime();
-        //MoveLogic();
+        if (isDriving) { MoveLogic(); }
 
     }
 
@@ -82,67 +86,35 @@ public class ShutterScript : DrivingSystem
 
     private void MoveLogic()
     {
-        if (Mathf.Abs(horizontalInput) > 0.1f)
-        {
-            float y = (horizontalInput > 0.1f) ? tiltAngle : -tiltAngle; // left = + , right = -
-            Quaternion target = Quaternion.Euler(0f, y, 0f);
+        float xI = horizontalInput;
+        float yI = verticalInput;
+        float x = transform.localPosition.x;
+        float y = transform.localPosition.y;
 
-            transform.localRotation = Quaternion.Lerp(
-                transform.localRotation,
-                target,
-                Time.deltaTime * lerpSpeed
-            );
-        }
-        else
+        if (Mathf.Abs(x) > spaceScale)
         {
-            // return to neutral
-            Quaternion target = Quaternion.Euler(0f, 0f, 0f);
-            transform.localRotation = Quaternion.Lerp(
-                transform.localRotation,
-                target,
-                Time.deltaTime * lerpSpeed
-            );
+            transform.localPosition -= new Vector3( x / spaceScale * Time.deltaTime, 0f, 0f);
         }
-        if (Mathf.Abs(verticalInput) > 0.1f)
+        if (Mathf.Abs(y) > spaceScale)
         {
-            // up = -20, down = +20 (flip signs if you want the opposite)
-            float x = (verticalInput > 0.1f) ? -tiltAngle : tiltAngle;
+            transform.localPosition -= new Vector3(0f, y / spaceScale * Time.deltaTime, 0f);
+        }
+        
+        Vector3 targetEuler = Vector3.zero;
 
-            Quaternion target = Quaternion.Euler(x, 0f, 0f);
-
-            transform.localRotation = Quaternion.Lerp(
-                transform.localRotation,
-                target,
-                Time.deltaTime * lerpSpeed
-            );
-        }
-        else
+        if (Mathf.Abs(xI) > minDeadzone || Mathf.Abs(yI) > minDeadzone)
         {
-            // return to neutral
-            Quaternion target = Quaternion.Euler(0f, 0f, 0f);
-            transform.localRotation = Quaternion.Lerp(
-                transform.localRotation,
-                target,
-                Time.deltaTime * lerpSpeed
-            );
+            targetEuler = new Vector3(-yI * maxRotAngle, xI * maxRotAngle, 0f);
+            transform.localPosition += new Vector3(xI * speed * Time.deltaTime, yI * speed * Time.deltaTime, 0);
         }
 
-        if (transform.position.x > spaceScale && horizontalInput > 0)
-        {
-            horizontalInput = 0;
-            rb.linearVelocity = Vector3.zero;
-        }
-        if (transform.position.x < -spaceScale && horizontalInput < 0)
-        {
-            horizontalInput = 0;
-            rb.linearVelocity = Vector3.zero;
-        }
+        Quaternion targetRot = Quaternion.Euler(targetEuler);
 
-        rb.linearVelocity = new Vector3(horizontalInput * speed, verticalInput * speed, 0);
+        transform.localRotation = Quaternion.Lerp(transform.localRotation, targetRot, Time.deltaTime * lerpSpeed);
 
         // Meteor Dust Rotation
-        Vector3 temp = transform.rotation.eulerAngles;
-        meteorDust.transform.rotation = Quaternion.Euler(
+        Vector3 temp = transform.localRotation.eulerAngles;
+        meteorDust.transform.localRotation = Quaternion.Euler(
             (temp.x + 180),
             temp.y,
             temp.z * -1f

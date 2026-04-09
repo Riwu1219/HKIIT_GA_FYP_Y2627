@@ -18,6 +18,6 @@ public class SunScript : MonoBehaviour
     void Update()
     {
         float degreesPerSecond = rotationPerDay / (dayPeriodInHours * 3600f);
-        revolutionAxis.transform.rotation *= Quaternion.Euler(0, degreesPerSecond * Time.deltaTime * SpaceSceneManager.instance.universalTimeScale, 0);
+        revolutionAxis.transform.rotation *= Quaternion.Euler(0, degreesPerSecond * Time.deltaTime * MoonSceneManager.instance.universalTimeScale, 0);
     }
 }
