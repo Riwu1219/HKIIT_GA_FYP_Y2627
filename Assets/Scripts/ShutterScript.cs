@@ -12,8 +12,6 @@ public class ShutterScript : DrivingSystem
     // may not in use, consider remove
     [SerializeField] private float lerpSpeed = 10f;
     [SerializeField] private float tiltAngle = 15f;
-    private float horizontalInput;
-    private float verticalInput;
     private float spaceScale = 50f;
 
     [Header("Shutter Energy")]
@@ -38,7 +36,7 @@ public class ShutterScript : DrivingSystem
     }
 
 
-    void Update()
+    protected override void Update()
     {
         base.Update();
         horizontalInput = Input.GetAxis("Horizontal");
@@ -47,7 +45,7 @@ public class ShutterScript : DrivingSystem
         // Energy decrease over time, faster while travel too far from center
 
         EnengyDecreaseOverTime();
-        MoveLogic();
+        //MoveLogic();
 
     }
 

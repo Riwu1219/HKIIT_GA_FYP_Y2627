@@ -7,23 +7,41 @@ public class DrivingSystem : MonoBehaviour
     public GameObject driverPlayer;
     public CharacterController cc;
     public Transform sit_trans;
+    public Vector3 exitOffset = new Vector3(2f, 0f, 0f);
     public GameObject[] DisableOnDriveObject;
-    public GameObject enterButton;
+    public GameObject interactionObject;
+    public MeshRenderer mr;
+
 
     [Header("DrivingSystem Input")]
     public InputActionReference controllerInteractionBind;
+    [SerializeField] protected float horizontalInput, verticalInput;
 
     [Header("DrivingSystem Status")]
+    public bool interactionBtnOnHover = false;
     [SerializeField] protected bool isDriving = false;
     
-    protected void Update()
+    virtual protected void Update()
     {
-        if (!isDriving) { return; }
+        if (!isDriving) 
+        { 
+            if (interactionBtnOnHover && controllerInteractionBind.action.WasPressedThisFrame())
+            {
+                EnterDriveMode();
+            }
+            return; 
+        }
 
         if (controllerInteractionBind.action.WasPressedThisFrame())
         {
             ExitDriveMode();
         }
+    }
+
+    public void SetInteractionBtnOnHover(bool state)
+    {
+        interactionBtnOnHover = state;
+        mr.materials[1].SetFloat("_Enabled", state ? 1 : 0);
     }
 
     public void EnterDriveMode()
@@ -37,7 +55,7 @@ public class DrivingSystem : MonoBehaviour
 
         driverPlayer.transform.position = sit_trans.position;
         driverPlayer.transform.rotation = sit_trans.rotation;
-        enterButton.SetActive(false);
+        interactionObject.SetActive(false);
         isDriving = true;
     }
 
@@ -50,9 +68,9 @@ public class DrivingSystem : MonoBehaviour
             cc.enabled = true;
         }
 
-        enterButton.SetActive(true);
+        interactionObject.SetActive(true);
         // Place the player next to the rover when exiting (Need adjustment)
-        driverPlayer.transform.position = transform.position + transform.right * 2f;
+        driverPlayer.transform.position = sit_trans.position + exitOffset;
         isDriving = false;
     }
 }

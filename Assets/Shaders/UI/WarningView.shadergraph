@@ -1709,8 +1709,8 @@
     "m_ObjectId": "3abf138bb5314cf0b792fbcde3eef39b",
     "m_Title": "DirectionMasking",
     "m_Position": {
-        "x": -1771.0001220703125,
-        "y": -233.99998474121095
+        "x": -1771.0,
+        "y": -234.0
     }
 }
 
@@ -2406,7 +2406,7 @@
     "m_Title": "Fresnel",
     "m_Position": {
         "x": -1525.0,
-        "y": 318.0
+        "y": 318.00006103515627
     }
 }
 
