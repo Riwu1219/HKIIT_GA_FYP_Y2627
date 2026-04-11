@@ -38,18 +38,7 @@ public class ShutterGameManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
-    public float TakeDamage(float damage, float curEnergy)
-    {
-        curEnergy -= damage;
-        if (curEnergy <= 0)
-        {
-            curEnergy = 0;
-            OnLose();
-        }
-        return curEnergy;
-    }
-
-    private void OnLose()
+    public void OnLose()
     {
         cameraEffect.CameraFadeBlack();
         meteorGenerator.isMeteorGenerate = false;

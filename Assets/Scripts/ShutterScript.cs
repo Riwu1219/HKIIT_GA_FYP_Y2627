@@ -37,6 +37,7 @@ public class ShutterScript : DrivingSystem
     void Start()
     {
         spaceScale = ShutterGameManager.instance.spaceScale;
+
     }
 
 
@@ -50,10 +51,12 @@ public class ShutterScript : DrivingSystem
 
         EnengyDecreaseOverTime();
         if (isDriving) { MoveLogic(); }
+        
 
+        RefreshUI();
     }
 
-    private void RefreshEnergyUI()
+    private void RefreshUI()
     {
         energyBar.value = energy;
     }
@@ -65,23 +68,29 @@ public class ShutterScript : DrivingSystem
         {
             multiplier = Vector2.Distance(transform.position, Vector2.zero) * 1.5f - spaceScale;
         }
-        energy = ShutterGameManager.instance.TakeDamage(energyDecreaseSpeed * multiplier * Time.deltaTime, energy);
-        RefreshEnergyUI();
+        TakeDamage(energyDecreaseSpeed * multiplier * Time.deltaTime);
+        
     }
 
     public void OnMeteorHit(GameObject meteor)
     {
-        TakeDamage(meteor.transform.localScale.x * meteorDamageMultiper);
+        float _damage = meteor.transform.localScale.x * meteorDamageMultiper;
+        TakeDamage(_damage);
         cameraEffect.TriggerShake(cameraEffect.shakeDuration, cameraEffect.shakeMagnitude * (meteor.transform.localScale.x), cameraEffect.dampingSpeed);
         //Play hit sound effect here
+        Debug.Log("Hit by meteor, size, damage: " + meteor.transform.localScale.x + ", " + _damage);
         Destroy(meteor);
         // TODO: Lose condition, Back to meteor dodge start.
     }
 
-    private void TakeDamage(float damage)
+    public void TakeDamage(float damage)
     {
-        energy = ShutterGameManager.instance.TakeDamage(energyDecreaseSpeed * Time.deltaTime, energy);
-        RefreshEnergyUI();
+        energy -= damage;
+        if (energy <= 0)
+        {
+            energy = 0;
+            ShutterGameManager.instance.OnLose();
+        }
     }
 
     private void MoveLogic()
