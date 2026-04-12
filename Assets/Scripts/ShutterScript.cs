@@ -1,4 +1,5 @@
 using Unity.Entities.UniversalDelegates;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 using static UnityEngine.GraphicsBuffer;
@@ -29,6 +30,16 @@ public class ShutterScript : DrivingSystem
     [Header("Controller Setting")]
     public float minDeadzone = 0.1f;
 
+    [Header("Monitor UI")]
+    public GameObject monitorCanvas;
+
+    [Header("Lighting")]
+    public bool lightDown = false;
+    public GameObject mainLight;
+    public Animator mainLight_Ani;
+    public GameObject warnningLight;
+    public Animator warningLight_Ani;
+
     void Awake()
     {
         instance = this;
@@ -37,7 +48,8 @@ public class ShutterScript : DrivingSystem
     void Start()
     {
         spaceScale = ShutterGameManager.instance.spaceScale;
-
+        canExit = false;
+        SetVeicleCanEnter(false);
     }
 
 
@@ -54,6 +66,14 @@ public class ShutterScript : DrivingSystem
         
 
         RefreshUI();
+    }
+
+    protected override void OnDriveModeEnter()
+    {
+        //May add ui animation
+        monitorCanvas.SetActive(true);
+        monitorCanvas.GetComponent<Animator>().Play("Show");
+        ShutterGameManager.instance.StartMeteorDodging();
     }
 
     private void RefreshUI()
@@ -78,6 +98,21 @@ public class ShutterScript : DrivingSystem
         TakeDamage(_damage);
         cameraEffect.TriggerShake(cameraEffect.shakeDuration, cameraEffect.shakeMagnitude * (meteor.transform.localScale.x), cameraEffect.dampingSpeed);
         //Play hit sound effect here
+
+        if (warnningLight.activeSelf == false)
+        {
+            warnningLight.SetActive(true);
+        }
+        if (energy > 70f)
+        {
+            mainLight_Ani.Play("Flash1");
+        }
+        else if (lightDown == false)
+        {
+            lightDown = true;
+            mainLight.SetActive(false);
+            Debug.Log("Main light down");
+        }
         Debug.Log("Hit by meteor, size, damage: " + meteor.transform.localScale.x + ", " + _damage);
         Destroy(meteor);
         // TODO: Lose condition, Back to meteor dodge start.

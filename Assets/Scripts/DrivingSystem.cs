@@ -11,6 +11,7 @@ public class DrivingSystem : MonoBehaviour
     public GameObject[] DisableOnDriveObject;
     public GameObject interactionObject;
     public MeshRenderer mr;
+    
 
 
     [Header("DrivingSystem Input")]
@@ -18,9 +19,19 @@ public class DrivingSystem : MonoBehaviour
     [SerializeField] protected float horizontalInput, verticalInput;
 
     [Header("DrivingSystem Status")]
+    public bool canEnter = true;
+    public bool canExit = true;
     public bool interactionBtnOnHover = false;
     [SerializeField] protected bool isDriving = false;
-    
+
+    private void Start()
+    {
+        if (!canEnter)
+        {
+            SetInteractionBtnOnHover(false);
+        }
+    }
+
     virtual protected void Update()
     {
         if (!isDriving) 
@@ -56,11 +67,27 @@ public class DrivingSystem : MonoBehaviour
         driverPlayer.transform.position = sit_trans.position;
         driverPlayer.transform.rotation = sit_trans.rotation;
         interactionObject.SetActive(false);
+        OnDriveModeEnter();
         isDriving = true;
+    }
+
+    public void SetVeicleCanEnter(bool state)
+    {
+        canEnter = state;
+        if (!state)
+        {
+            SetInteractionBtnOnHover(false);
+        }
+    }
+
+    virtual protected void OnDriveModeEnter()
+    {
+        
     }
 
     public void ExitDriveMode()
     {
+        if (!canExit) { return; }
         driverPlayer.transform.SetParent(null);
         foreach (var obj in DisableOnDriveObject)
         {
@@ -71,6 +98,12 @@ public class DrivingSystem : MonoBehaviour
         interactionObject.SetActive(true);
         // Place the player next to the rover when exiting (Need adjustment)
         driverPlayer.transform.position = sit_trans.position + exitOffset;
+        OnDriveModeExit();
         isDriving = false;
+    }
+
+    virtual protected void OnDriveModeExit()
+    {
+
     }
 }
