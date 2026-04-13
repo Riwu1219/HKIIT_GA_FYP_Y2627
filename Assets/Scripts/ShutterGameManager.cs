@@ -25,6 +25,13 @@ public class ShutterGameManager : MonoBehaviour
     public float startPercent = 0.5f;
     public float endPercent = 1f;
 
+    [Header("SwitchScene")]
+    public GameObject animationObject;
+    public GameObject player;
+    public Transform viewTrans;
+    public GameObject[] inActiveOnAnimation;
+
+
 
     private void Awake()
     {
@@ -60,6 +67,7 @@ public class ShutterGameManager : MonoBehaviour
         if (isPassed)
         {
             isGameStatus = false;
+            meteorGenerator.isMeteorGenerate = false;
             //TODO: Pass condition, Load Moon Scene.
             Invoke("OnPass", 3f);
         }
@@ -90,9 +98,18 @@ public class ShutterGameManager : MonoBehaviour
 
     public void OnPass()
     {
-        meteorGenerator.isMeteorGenerate = false;
+        foreach (GameObject obj in inActiveOnAnimation)
+        {
+            obj.SetActive(false);
+        }
+
+        animationObject.SetActive(true);
+        ShutterScript.instance.SetIsDriving(false);
+        animationObject.GetComponent<Animator>().Play("ShutterToMoonScene");
+        player.transform.parent = viewTrans;
+        player.transform.position = viewTrans.position;
+        player.transform.rotation = viewTrans.rotation;
         // play pass animation or effect here.
-        LoadMoonScene();
     }
 
     public void OnLose()

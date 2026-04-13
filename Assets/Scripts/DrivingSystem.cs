@@ -102,6 +102,11 @@ public class DrivingSystem : MonoBehaviour
         isDriving = false;
     }
 
+    public void SetIsDriving(bool state)
+    {
+        isDriving  = state;
+    }
+
     virtual protected void OnDriveModeExit()
     {
 
