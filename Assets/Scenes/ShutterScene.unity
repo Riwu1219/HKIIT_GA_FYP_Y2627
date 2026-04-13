@@ -6964,6 +6964,37 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &790246115
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 790246116}
+  m_Layer: 0
+  m_Name: CameraLocatePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &790246116
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 790246115}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 919951629}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &806126904
 GameObject:
   m_ObjectHideFlags: 0
@@ -7013,13 +7044,17 @@ MonoBehaviour:
   damageMultiplier: 1
   spaceScale: 50
   meteorGenerator: {fileID: 1104886074}
-  playTime: 60
+  playTime: 10
   curTime: 0
   isGameStatus: 0
   isPassed: 0
   progressBar: {fileID: 194337511}
   startPercent: 0.5
   endPercent: 0.9
+  animationObject: {fileID: 1798508233}
+  player: {fileID: 1847341077}
+  viewTrans: {fileID: 790246116}
+  inActiveOnAnimation: []
 --- !u!1 &854273943
 GameObject:
   m_ObjectHideFlags: 0
@@ -7348,6 +7383,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 790246116}
   - {fileID: 971991652}
   m_Father: {fileID: 1798508234}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7692,7 +7728,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &971991649
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10005,6 +10041,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1798508234}
   - component: {fileID: 1798508235}
+  - component: {fileID: 1798508236}
   m_Layer: 0
   m_Name: SceneSwitchElement
   m_TagString: Untagged
@@ -10053,6 +10090,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1798508236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1798508233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a30498373008ddf4f8bd56225b01c673, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SceneLoader
 --- !u!1 &1812694510
 GameObject:
   m_ObjectHideFlags: 0
