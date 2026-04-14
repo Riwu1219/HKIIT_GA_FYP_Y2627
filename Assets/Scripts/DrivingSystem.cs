@@ -15,7 +15,7 @@ public class DrivingSystem : MonoBehaviour
 
 
     [Header("DrivingSystem Input")]
-    public InputActionReference controllerInteractionBind;
+    public InputAction controllerInteractionBind;
     [SerializeField] protected float horizontalInput, verticalInput;
 
     [Header("DrivingSystem Status")]
@@ -26,6 +26,7 @@ public class DrivingSystem : MonoBehaviour
 
     private void Start()
     {
+        controllerInteractionBind.Enable();
         if (!canEnter)
         {
             SetInteractionBtnOnHover(false);
@@ -36,14 +37,15 @@ public class DrivingSystem : MonoBehaviour
     {
         if (!isDriving) 
         { 
-            if (interactionBtnOnHover && controllerInteractionBind.action.WasPressedThisFrame())
+            if (interactionBtnOnHover && controllerInteractionBind.WasPressedThisFrame())
             {
+                Debug.Log("DrivingSystem: Enter Drive Mode");
                 EnterDriveMode();
             }
             return; 
         }
 
-        if (controllerInteractionBind.action.WasPressedThisFrame())
+        if (controllerInteractionBind.WasPressedThisFrame())
         {
             ExitDriveMode();
         }
