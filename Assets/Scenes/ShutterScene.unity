@@ -6627,7 +6627,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &640752410
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7072,6 +7072,7 @@ GameObject:
   m_Component:
   - component: {fileID: 806126905}
   - component: {fileID: 806126907}
+  - component: {fileID: 806126908}
   m_Layer: 0
   m_Name: SceneManager
   m_TagString: Untagged
@@ -7123,6 +7124,19 @@ MonoBehaviour:
   player: {fileID: 1847341077}
   viewTrans: {fileID: 790246116}
   inActiveOnAnimation: []
+--- !u!114 &806126908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 806126904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a30498373008ddf4f8bd56225b01c673, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SceneLoader
+  animator: {fileID: 0}
 --- !u!1 &854273943
 GameObject:
   m_ObjectHideFlags: 0
