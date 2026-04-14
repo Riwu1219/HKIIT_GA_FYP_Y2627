@@ -438,6 +438,10 @@ PrefabInstance:
       propertyPath: m_MinMoveDistance
       value: 0.0001
       objectReference: {fileID: 0}
+    - target: {fileID: 4619473792473197698, guid: e950153e93300a748beeb31f431d56b3, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5276639413281980381, guid: e950153e93300a748beeb31f431d56b3, type: 3}
       propertyPath: far clip plane
       value: 10000
@@ -450,13 +454,17 @@ PrefabInstance:
       propertyPath: m_MoveSpeed
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6592148915493450348, guid: e950153e93300a748beeb31f431d56b3, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6840128927728608900, guid: e950153e93300a748beeb31f431d56b3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 200.44
       objectReference: {fileID: 0}
     - target: {fileID: 6840128927728608900, guid: e950153e93300a748beeb31f431d56b3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 189.4
+      value: 188.665
       objectReference: {fileID: 0}
     - target: {fileID: 6840128927728608900, guid: e950153e93300a748beeb31f431d56b3, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1065,7 +1073,7 @@ GameObject:
   - component: {fileID: 540128722}
   - component: {fileID: 540128721}
   - component: {fileID: 540128720}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Terrain_(0.00, 0.00, -1000.00)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1707,7 +1715,7 @@ GameObject:
   - component: {fileID: 1153975032}
   - component: {fileID: 1153975031}
   - component: {fileID: 1153975030}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Terrain_(-1000.00, 0.00, -1000.00)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2062,7 +2070,7 @@ GameObject:
   - component: {fileID: 1758255997}
   - component: {fileID: 1758255996}
   - component: {fileID: 1758255995}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Terrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2234,7 +2242,7 @@ GameObject:
   - component: {fileID: 1957704012}
   - component: {fileID: 1957704011}
   - component: {fileID: 1957704010}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Terrain_(-1000.00, 0.00, 0.00)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2383,7 +2391,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2004552069}
   - component: {fileID: 2004552068}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TerrainGroup
   m_TagString: Untagged
   m_Icon: {fileID: 0}

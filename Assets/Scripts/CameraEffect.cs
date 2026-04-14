@@ -37,6 +37,16 @@ public class CameraEffect : MonoBehaviour
         Fader.GetComponent<Animator>().Play("CameraFadeBlack");
     }
 
+    public void CameraFadeWhite()
+    {
+        Fader.GetComponent<Animator>().Play("CameraFadeWhite");
+    }
+
+    public void CameraWhiteToTran()
+    {
+        Fader.GetComponent<Animator>().Play("CameraWhiteToTran");
+    }
+
     public void TriggerShake(float _shakeDuration, float _shakeMagnitude, float _dampingSpeed)
     {
         StartCoroutine(CameraShake(_shakeDuration, _shakeMagnitude, _dampingSpeed));

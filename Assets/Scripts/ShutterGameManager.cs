@@ -40,7 +40,7 @@ public class ShutterGameManager : MonoBehaviour
 
     private void Start()
     {
-        cameraEffect.CameraFadeTran();
+        cameraEffect.CameraWhiteToTran();
 
     }
 
@@ -69,6 +69,7 @@ public class ShutterGameManager : MonoBehaviour
             isGameStatus = false;
             meteorGenerator.isMeteorGenerate = false;
             //TODO: Pass condition, Load Moon Scene.
+            cameraEffect.CameraFadeWhite();
             Invoke("OnPass", 3f);
         }
         

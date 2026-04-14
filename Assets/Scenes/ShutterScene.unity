@@ -6330,6 +6330,11 @@ Transform:
   - {fileID: 1206866447}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &531591234 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 894404733199845925, guid: e950153e93300a748beeb31f431d56b3, type: 3}
+  m_PrefabInstance: {fileID: 1028934528}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &538191719
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7982,6 +7987,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 873381267}
     m_Modifications:
+    - target: {fileID: 1636211316887384372, guid: e950153e93300a748beeb31f431d56b3, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1636211316887384372, guid: e950153e93300a748beeb31f431d56b3, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1636211316887384372, guid: e950153e93300a748beeb31f431d56b3, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 3112585445381042489, guid: e950153e93300a748beeb31f431d56b3, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -7996,7 +8013,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5324519664647219918, guid: e950153e93300a748beeb31f431d56b3, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6840128927728608900, guid: e950153e93300a748beeb31f431d56b3, type: 3}
       propertyPath: m_LocalScale.x
@@ -10102,6 +10119,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a30498373008ddf4f8bd56225b01c673, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneLoader
+  animator: {fileID: 531591234}
 --- !u!1 &1812694510
 GameObject:
   m_ObjectHideFlags: 0
