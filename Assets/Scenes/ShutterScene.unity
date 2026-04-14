@@ -6611,6 +6611,68 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 603017174}
   m_CullTransparentMesh: 1
+--- !u!1 &640752409
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 640752411}
+  - component: {fileID: 640752410}
+  m_Layer: 0
+  m_Name: VRInputTester
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &640752410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 640752409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a22f26098b01334c93a7b0feacb94f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VRInputTest
+  buttonAction: {fileID: -8069514856583376848, guid: 0be0028c24f2a4c14a96b6aa39055933, type: 3}
+  buttonAction2:
+    m_Name: Button Action 2
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 54386f8e-7986-4193-a58e-b405943b8998
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 186d0d09-169f-4245-b354-bb30b1e61361
+      m_Path: <XRController>{LeftHand}/primaryButton
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Button Action 2
+      m_Flags: 0
+    m_Flags: 0
+--- !u!4 &640752411
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 640752409}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &646733655
 GameObject:
   m_ObjectHideFlags: 0
@@ -7226,7 +7288,23 @@ MonoBehaviour:
   - {fileID: 1449773769}
   interactionObject: {fileID: 1990547902}
   mr: {fileID: 1751616444}
-  controllerInteractionBind: {fileID: -3599823989380923159, guid: 0be0028c24f2a4c14a96b6aa39055933, type: 3}
+  controllerInteractionBind:
+    m_Name: Controller Interaction Bind
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 88eabed3-cabf-43c3-bfc6-b4fa4f33d7b3
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 7cf0c350-8780-4608-9382-22bcbad8001f
+      m_Path: <XRController>{LeftHand}/primaryButton
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Controller Interaction Bind
+      m_Flags: 0
+    m_Flags: 0
   horizontalInput: 0
   verticalInput: 0
   canEnter: 1
@@ -10067,7 +10145,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1798508234
 Transform:
   m_ObjectHideFlags: 0
@@ -12202,3 +12280,4 @@ SceneRoots:
   - {fileID: 1454443054}
   - {fileID: 1048129680}
   - {fileID: 1798508234}
+  - {fileID: 640752411}

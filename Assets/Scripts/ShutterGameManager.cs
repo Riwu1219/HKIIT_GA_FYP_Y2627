@@ -74,7 +74,7 @@ public class ShutterGameManager : MonoBehaviour
             cameraEffect.CameraWarningEffect(new Vector3(0f, 0f, 0f));
             meteorGenerator.isMeteorGenerate = false;
             //TODO: Pass condition, Load Moon Scene.
-            cameraEffect.CameraFadeWhite();
+            //Play Pass Asteroid Area here.
             Invoke("OnPass", 3f);
         }
         
@@ -108,13 +108,15 @@ public class ShutterGameManager : MonoBehaviour
         {
             obj.SetActive(false);
         }
+        // Load Moon Scene after play pass animation or effect.
+        StartCoroutine(SceneLoader.instance.PreloadSceneLoadIn("MoonScene", 3f));
 
-        animationObject.SetActive(true);
+        //animationObject.SetActive(true);
         ShutterScript.instance.SetIsDriving(false);
-        animationObject.GetComponent<Animator>().Play("ShutterToMoonScene");
-        player.transform.parent = viewTrans;
-        player.transform.position = viewTrans.position;
-        player.transform.rotation = viewTrans.rotation;
+        //animationObject.GetComponent<Animator>().Play("ShutterToMoonScene");
+        //player.transform.parent = viewTrans;
+        //player.transform.position = viewTrans.position;
+        //player.transform.rotation = viewTrans.rotation;
         // play pass animation or effect here.
     }
 

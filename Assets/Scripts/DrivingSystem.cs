@@ -12,8 +12,6 @@ public class DrivingSystem : MonoBehaviour
     public GameObject interactionObject;
     public MeshRenderer mr;
     
-
-
     [Header("DrivingSystem Input")]
     public InputAction controllerInteractionBind;
     [SerializeField] protected float horizontalInput, verticalInput;
@@ -24,9 +22,13 @@ public class DrivingSystem : MonoBehaviour
     public bool interactionBtnOnHover = false;
     [SerializeField] protected bool isDriving = false;
 
-    private void Start()
+    private void OnEnable()
     {
         controllerInteractionBind.Enable();
+    }
+
+    private void Start()
+    {
         if (!canEnter)
         {
             SetInteractionBtnOnHover(false);
