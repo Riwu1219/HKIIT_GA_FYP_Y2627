@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: fa8fb16242bb4044e8d015127af051fa
+guid: 7123fe39d6fb4514fa64911bcadd981c
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
@@ -7,23 +7,78 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: aiStandardSurface2
-    second: {fileID: 2100000, guid: 4ddf54aec66b17d4e800c64e0022b343, type: 2}
+      name: SS_StandSG
+    second: {fileID: 2100000, guid: 2f138f7d88e82ba4a96cb528605b81c5, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: aiStandardSurface3
-    second: {fileID: 2100000, guid: 93376c8483edd064c9a5607056cb63a8, type: 2}
+      name: SS_armorSG
+    second: {fileID: 2100000, guid: e2ae0c745e8cc7943a5c6b4e582f4d96, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: base
-    second: {fileID: 2100000, guid: 20c755d80ea09d2488cc1671df0890bb, type: 2}
+      name: SS_clothesSG
+    second: {fileID: 2100000, guid: 1afb083f7f6c96b4494397dffe84ddb7, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: base2
-    second: {fileID: 2100000, guid: f27c04b34cae74f439e57b749ae0280c, type: 2}
+      name: SS_clothesSG1
+    second: {fileID: 2100000, guid: edeffc75911399f4cbcd1c6ea26b7224, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SS_faceSG
+    second: {fileID: 2100000, guid: 1383b2fb70141dc4baabcf0d2c35b56c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SS_floorSG
+    second: {fileID: 2100000, guid: 056d6b62b577a5244bce6020e0257410, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SS_glassSG
+    second: {fileID: 2100000, guid: 834208efcd1852046b111714670030d4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SS_handleSG
+    second: {fileID: 2100000, guid: 5981b056a2a37cf459bbda7e4fb2010c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SS_lightSG
+    second: {fileID: 2100000, guid: 30c90ec514268734c9caef57909a9d5d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SS_tubeSG
+    second: {fileID: 2100000, guid: 4b2a79b23d708c14e83247f6a59dbba8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SS_tubeSG1
+    second: {fileID: 2100000, guid: d07f9c62ab5946e45bce26b135d25d64, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SS_wallSG
+    second: {fileID: 2100000, guid: 07060005505bf2a47846d1782be94a36, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: blinn24
+    second: {fileID: 2100000, guid: f77656226361c6343bcb2290226e24bf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: phong1
+    second: {fileID: 2100000, guid: fe4797b8ad2dea8428027c65ba369329, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: screenSG
+    second: {fileID: 2100000, guid: 5fe38ab8e7fd94048b3c42d5bfdea437, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -49,36 +104,7 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations:
-    - serializedVersion: 16
-      name: Take 001
-      takeName: Take 001
-      internalID: 1827226128182048838
-      firstFrame: 1
-      lastFrame: 120
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 1
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 1
+    clipAnimations: []
     isReadable: 0
   meshes:
     lODScreenPercentages: []
