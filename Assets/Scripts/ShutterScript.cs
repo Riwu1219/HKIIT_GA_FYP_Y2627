@@ -40,6 +40,8 @@ public class ShutterScript : DrivingSystem
     public GameObject warnningLight;
     public Animator warningLight_Ani;
 
+    public bool isGameState = false;
+
     void Awake()
     {
         instance = this;
@@ -61,8 +63,12 @@ public class ShutterScript : DrivingSystem
 
         // Energy decrease over time, faster while travel too far from center
 
-        EnengyDecreaseOverTime();
-        if (isDriving) { MoveLogic(); }
+        
+        if (isDriving) 
+        {
+            EnengyDecreaseOverTime();
+            MoveLogic(); 
+        }
         
 
         RefreshUI();
@@ -94,6 +100,7 @@ public class ShutterScript : DrivingSystem
 
     public void OnMeteorHit(GameObject meteor)
     {
+        if (!isGameState) { return; }
         float _damage = meteor.transform.localScale.x * meteorDamageMultiper;
         TakeDamage(_damage);
         cameraEffect.TriggerShake(cameraEffect.shakeDuration, cameraEffect.shakeMagnitude * (meteor.transform.localScale.x), cameraEffect.dampingSpeed);

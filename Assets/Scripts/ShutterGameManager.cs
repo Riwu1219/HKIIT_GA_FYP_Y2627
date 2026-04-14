@@ -18,6 +18,7 @@ public class ShutterGameManager : MonoBehaviour
     public float playTime = 60f;
     public float curTime = 0f;
     public bool isGameStatus = false;
+    public bool isLose = false;
     public bool isPassed = false;
 
     [Header("FlightCountDown Setting")]
@@ -40,13 +41,14 @@ public class ShutterGameManager : MonoBehaviour
 
     private void Start()
     {
-        cameraEffect.CameraWhiteToTran();
+        cameraEffect.CameraFadeTran();
 
     }
 
     public void StartMeteorDodging()
     {
         isGameStatus = true;
+        ShutterScript.instance.isGameState = true;
         Invoke("SetMeteorGenerate", 2f);
         progressBar.value = startPercent;
     }
@@ -54,6 +56,7 @@ public class ShutterGameManager : MonoBehaviour
     private void Update()
     {
         if (!isGameStatus) { return; }
+
         cameraEffect.CameraWarningEffect(shutter.transform.position);
         if ( curTime < playTime )
         {
@@ -64,9 +67,11 @@ public class ShutterGameManager : MonoBehaviour
             isPassed = true;
         }
 
-        if (isPassed)
+        if (isPassed && !isLose)
         {
             isGameStatus = false;
+            ShutterScript.instance.isGameState = false;
+            cameraEffect.CameraWarningEffect(new Vector3(0f, 0f, 0f));
             meteorGenerator.isMeteorGenerate = false;
             //TODO: Pass condition, Load Moon Scene.
             cameraEffect.CameraFadeWhite();
@@ -115,6 +120,7 @@ public class ShutterGameManager : MonoBehaviour
 
     public void OnLose()
     {
+        isLose = true;
         cameraEffect.CameraFadeBlack();
         meteorGenerator.isMeteorGenerate = false;
         //TODO: Lose condition, Back to meteor dodge start.

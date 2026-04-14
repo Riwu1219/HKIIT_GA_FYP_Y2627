@@ -32,7 +32,7 @@ public class MoonSceneManager : MonoBehaviour
 
     void Start()
     {
-        cameraEffect.CameraFadeTran();
+        cameraEffect.CameraWhiteToTran();
         volume.profile.TryGet(out hdriSky);
         degreesPerSecond = 360f / (siderealDays * 86400f);
     }

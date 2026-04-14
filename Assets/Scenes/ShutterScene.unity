@@ -6738,7 +6738,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &659259936
 Transform:
   m_ObjectHideFlags: 0
@@ -7052,6 +7052,7 @@ MonoBehaviour:
   playTime: 10
   curTime: 0
   isGameStatus: 0
+  isLose: 0
   isPassed: 0
   progressBar: {fileID: 194337511}
   startPercent: 0.5
@@ -7250,6 +7251,7 @@ MonoBehaviour:
   mainLight_Ani: {fileID: 777059028}
   warnningLight: {fileID: 659259935}
   warningLight_Ani: {fileID: 659259937}
+  isGameState: 1
 --- !u!1001 &896622770
 PrefabInstance:
   m_ObjectHideFlags: 0
