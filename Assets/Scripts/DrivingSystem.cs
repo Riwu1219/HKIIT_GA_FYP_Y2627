@@ -22,10 +22,8 @@ public class DrivingSystem : MonoBehaviour
     public bool interactionBtnOnHover = false;
     [SerializeField] protected bool isDriving = false;
 
-    private void OnEnable()
-    {
-        controllerInteractionBind.Enable();
-    }
+    private void OnEnable() => controllerInteractionBind.Enable();
+    private void OnDisable() => controllerInteractionBind.Disable();
 
     private void Start()
     {
