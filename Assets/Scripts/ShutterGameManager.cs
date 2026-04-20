@@ -28,7 +28,6 @@ public class ShutterGameManager : MonoBehaviour
     public GameObject animationObject;
     public GameObject player;
     public Transform viewTrans;
-    public GameObject[] inActiveOnAnimation;
 
 
 
@@ -102,15 +101,10 @@ public class ShutterGameManager : MonoBehaviour
 
     public void OnPass()
     {
-        foreach (GameObject obj in inActiveOnAnimation)
-        {
-            obj.SetActive(false);
-        }
         // Load Moon Scene after play pass animation or effect.
         StartCoroutine(SceneLoader.instance.PreloadSceneLoadIn("MoonScene", 3f));
 
         //animationObject.SetActive(true);
-        ShutterScript.instance.SetIsDriving(false);
         //animationObject.GetComponent<Animator>().Play("ShutterToMoonScene");
         //player.transform.parent = viewTrans;
         //player.transform.position = viewTrans.position;
@@ -121,6 +115,7 @@ public class ShutterGameManager : MonoBehaviour
     public void OnLose()
     {
         isLose = true;
+        isGameStatus = false;
         cameraEffect.CameraFadeBlack();
         meteorGenerator.isMeteorGenerate = false;
         //TODO: Lose condition, Back to meteor dodge start.

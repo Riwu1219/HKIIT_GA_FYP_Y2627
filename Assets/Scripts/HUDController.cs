@@ -3,9 +3,12 @@ using UnityEngine.InputSystem;
 
 public class HUDController : MonoBehaviour
 {
-    public GameObject hudPanel;
-    public bool interactable = false;
+    public DrivingSystem drivingSystem;
     public InputAction controllerInteractionBind;
+    
+    public GameObject panel;
+    public GameObject guide;
+    public bool interactable = false;
 
     private void OnEnable() => controllerInteractionBind.Enable();
     private void OnDisable() => controllerInteractionBind.Disable();
@@ -15,12 +18,20 @@ public class HUDController : MonoBehaviour
         if (!interactable) { return; }
         if (controllerInteractionBind.IsPressed())
         {
-            hudPanel.SetActive(true);
+            panel.SetActive(true);
+            guide.SetActive(false);
         }
         else
         {
-            hudPanel.SetActive(false);
+            panel.SetActive(false);
         }
+    }
+
+    public void OnIntroAnimationEnd()
+    {
+        drivingSystem.SetVeicleCanEnter(true);
+        guide.SetActive(true);
+        interactable = true;
     }
 
 }

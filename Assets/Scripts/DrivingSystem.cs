@@ -76,10 +76,8 @@ public class DrivingSystem : MonoBehaviour
     public void SetVeicleCanEnter(bool state)
     {
         canEnter = state;
-        if (!state)
-        {
-            SetInteractionBtnOnHover(false);
-        }
+        SetInteractionBtnOnHover(state);
+        interactionObject.SetActive(state);
     }
 
     virtual protected void OnDriveModeEnter()
