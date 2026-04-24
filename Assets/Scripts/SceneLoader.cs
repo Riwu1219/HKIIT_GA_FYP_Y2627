@@ -1,12 +1,13 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using static UnityEngine.InputSystem.LowLevel.InputStateHistory;
+using UnityEngine.Events;
 
 public class SceneLoader : MonoBehaviour
 {
     public static SceneLoader instance;
     public Animator animator;
+    public UnityEvent followUpEvent;
 
     private void Awake()
     {
@@ -44,5 +45,10 @@ public class SceneLoader : MonoBehaviour
         yield return new WaitForSeconds(second);
 
         op.allowSceneActivation = true;
+    }
+
+    public void FollowUpEvent()
+    {
+         followUpEvent.Invoke();
     }
 }

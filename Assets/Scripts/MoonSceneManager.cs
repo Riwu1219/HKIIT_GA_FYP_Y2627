@@ -7,7 +7,16 @@ public class MoonSceneManager : MonoBehaviour
 {
     public static MoonSceneManager instance;
 
-    public Volume volume;        // Assign your Sky and Fog Global Volume
+    public GameObject player;
+
+    [Header("SceneLoad")]
+    public Animator onSceneLoadAnimator;
+    public GameObject[] onSceneLoadDisableObjects;
+    public GameObject loadSceneElement;
+    public Transform spawnpoint;
+
+    [Header("Scene")]
+    public Volume volume;
     private HDRISky hdriSky;
     private float siderealDays = 27.322f;
     private float degreesPerSecond;
@@ -32,9 +41,32 @@ public class MoonSceneManager : MonoBehaviour
     void Start()
     {
         cameraEffect.CameraWhiteToTran();
+        OnSceneLoaded();
         volume.profile.TryGet(out hdriSky);
         degreesPerSecond = 360f / (siderealDays * 86400f);
     }
+
+    public void OnSceneLoaded()
+    {
+        foreach (var obj in onSceneLoadDisableObjects)
+        {
+            obj.SetActive(false);
+        }
+        onSceneLoadAnimator.Play("ShutterToMoonScene");
+    }
+
+    public void OnSceneLoadEnd()
+    {
+        cameraEffect.CameraWhiteToTran();
+        foreach (var obj in onSceneLoadDisableObjects)
+        {
+            obj.SetActive(true);
+        }
+        player.transform.position = spawnpoint.transform.position;
+        player.transform.rotation = spawnpoint.transform.rotation;
+        player.transform.parent = null;
+        loadSceneElement.SetActive(false);
+    } 
 
     void Update()
     {

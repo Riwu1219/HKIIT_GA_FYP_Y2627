@@ -52,6 +52,7 @@ public class ShutterGameManager : MonoBehaviour
 
     private void Update()
     {
+        DebugCheck();
         if (!isGameStatus) { return; }
 
         cameraEffect.CameraWarningEffect(shutter.transform.position);
@@ -103,7 +104,7 @@ public class ShutterGameManager : MonoBehaviour
     {
         // Load Moon Scene after play pass animation or effect.
         StartCoroutine(SceneLoader.instance.PreloadSceneLoadIn("MoonScene", 3f));
-
+        ShutterScript.instance.cameraEffect.CameraFadeWhite();
         //animationObject.SetActive(true);
         //animationObject.GetComponent<Animator>().Play("ShutterToMoonScene");
         //player.transform.parent = viewTrans;
@@ -122,4 +123,11 @@ public class ShutterGameManager : MonoBehaviour
         Invoke("RestartLevel", 3f);
     }
 
+    public void DebugCheck()
+    {
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            ShutterScript.instance.cameraEffect.CameraFadeWhite();
+        }
+    }
 }
