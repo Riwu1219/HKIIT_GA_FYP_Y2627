@@ -98,6 +98,7 @@ public class DrivingSystem : MonoBehaviour
         interactionObject.SetActive(true);
         // Place the player next to the rover when exiting (Need adjustment)
         driverPlayer.transform.position = sit_trans.position + exitOffset;
+        driverPlayer.transform.rotation = Quaternion.Euler(0f, sit_trans.transform.rotation.eulerAngles.y, 0f);
         OnDriveModeExit();
         isDriving = false;
     }
