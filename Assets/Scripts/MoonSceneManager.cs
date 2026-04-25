@@ -10,6 +10,7 @@ public class MoonSceneManager : MonoBehaviour
     public GameObject player;
 
     [Header("SceneLoad")]
+    public bool isSkipSceneLoadedAnimation = false;
     public Animator onSceneLoadAnimator;
     public GameObject[] onSceneLoadDisableObjects;
     public GameObject loadSceneElement;
@@ -51,6 +52,11 @@ public class MoonSceneManager : MonoBehaviour
         foreach (var obj in onSceneLoadDisableObjects)
         {
             obj.SetActive(false);
+        }
+        if (isSkipSceneLoadedAnimation)
+        {
+            OnSceneLoadEnd();
+            return;
         }
         onSceneLoadAnimator.Play("ShutterToMoonScene");
     }

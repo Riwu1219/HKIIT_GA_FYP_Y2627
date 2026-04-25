@@ -27,9 +27,15 @@ public class MoonRoverScript : DrivingSystem
         br.motorTorque = verticalInput * driveSpeed;
     }
 
+    protected override void OnDriveModeEnter()
+    {
+        rb.isKinematic = false;
+    }
+
     protected override void OnDriveModeExit()
     {
         rb.linearVelocity = Vector3.zero;
+        rb.isKinematic = true;
         fl.steerAngle = 0;
         fr.steerAngle = 0;
         bl.motorTorque = 0;
