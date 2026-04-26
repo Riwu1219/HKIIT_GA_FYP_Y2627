@@ -1,11 +1,9 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.Rendering;
 
 public class AudioController : MonoBehaviour
 {
     public AudioSource audioSource;
-    public float defaultVolume;
     public bool isAudioPlaying => audioSource.isPlaying;
 
     public void PlayAudio()
