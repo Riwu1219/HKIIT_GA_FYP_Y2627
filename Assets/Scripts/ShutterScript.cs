@@ -25,6 +25,11 @@ public class ShutterScript : DrivingSystem
 
     [Header("Effect")]
     [SerializeField] GameObject meteorDust;
+    public GameObject meteorSFXHolder;
+    private AudioSource meteorHitSFX;
+    public AudioSource shutterMoveSFX;
+    public GameObject ambienceSound;
+    public GameObject warningSFX;
     public CameraEffect cameraEffect;
 
     [Header("Controller Setting")]
@@ -50,6 +55,7 @@ public class ShutterScript : DrivingSystem
     void Start()
     {
         spaceScale = ShutterGameManager.instance.spaceScale;
+        meteorHitSFX = meteorSFXHolder.GetComponent<AudioSource>();
         canExit = false;
         SetVeicleCanEnter(false);
     }
@@ -77,6 +83,7 @@ public class ShutterScript : DrivingSystem
     protected override void OnDriveModeEnter()
     {
         //May add ui animation
+        shutterMoveSFX.GetComponent<AudioController>().FadeInAudio(1f);
         monitorCanvas.SetActive(true);
         monitorCanvas.GetComponent<Animator>().Play("Show");
         ShutterGameManager.instance.StartMeteorDodging();
@@ -98,16 +105,19 @@ public class ShutterScript : DrivingSystem
         
     }
 
-    public void OnMeteorHit(GameObject meteor)
+    public void OnMeteorHit(GameObject meteor, Vector3 pos)
     {
         if (!isGameState) { return; }
         float _damage = meteor.transform.localScale.x * meteorDamageMultiper;
         TakeDamage(_damage);
         cameraEffect.TriggerShake(cameraEffect.shakeDuration, cameraEffect.shakeMagnitude * (meteor.transform.localScale.x), cameraEffect.dampingSpeed);
-        //Play hit sound effect here
+        //Play hit sound effect
+        meteorSFXHolder.transform.position = pos;
+        MeteorHitSFX();
 
         if (warnningLight.activeSelf == false)
         {
+            warningSFX.GetComponent<AudioSource>().Play();
             warnningLight.SetActive(true);
         }
         if (energy > 70f)
@@ -125,6 +135,12 @@ public class ShutterScript : DrivingSystem
         // TODO: Lose condition, Back to meteor dodge start.
     }
 
+    public void MeteorHitSFX()
+    {
+        meteorHitSFX.pitch = Random.Range(0.8f, 1.2f);
+        meteorHitSFX.Play();
+    }
+
     public void TakeDamage(float damage)
     {
         energy -= damage;
@@ -135,12 +151,21 @@ public class ShutterScript : DrivingSystem
         }
     }
 
+    public void OnRestart()
+    {
+        shutterMoveSFX.GetComponent<AudioController>().FadeOutAudio(0.5f);
+        warningSFX.GetComponent<AudioController>().FadeOutAudio(1f);
+        ambienceSound.GetComponent<AudioController>().FadeOutAudio(1f);
+    }
+
     private void MoveLogic()
     {
         float xI = horizontalInput;
         float yI = verticalInput;
         float x = transform.localPosition.x;
         float y = transform.localPosition.y;
+
+        shutterMoveSFX.panStereo = -xI;
 
         if (Mathf.Abs(x) > spaceScale)
         {

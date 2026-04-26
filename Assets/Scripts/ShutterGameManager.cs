@@ -117,6 +117,7 @@ public class ShutterGameManager : MonoBehaviour
     {
         isLose = true;
         isGameStatus = false;
+        ShutterScript.instance.OnRestart();
         cameraEffect.CameraFadeBlack();
         meteorGenerator.isMeteorGenerate = false;
         //TODO: Lose condition, Back to meteor dodge start.

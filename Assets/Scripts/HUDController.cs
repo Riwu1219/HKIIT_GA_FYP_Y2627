@@ -31,7 +31,7 @@ public class HUDController : MonoBehaviour
             interacted = true;
             StartCoroutine(TriggerCD(2f));
         }
-        if (!isPressed && interacted)
+        if (!isPressed && interacted && wasPressedLastFrame)
         {
             if (audioController.isAudioPlaying) { audioController.FadeOutAudio(0.5f); }
             panel.SetActive(false);

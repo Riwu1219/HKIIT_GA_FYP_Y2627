@@ -47,7 +47,7 @@ public class MeteorScript : MonoBehaviour
     {
         if (collider.gameObject.CompareTag("Player"))
         {
-            ShutterScript.instance.OnMeteorHit(gameObject);
+            ShutterScript.instance.OnMeteorHit(gameObject, transform.position);
             MeteorGenerator.instance.meteorCount--;
             Destroy(gameObject);
         }
