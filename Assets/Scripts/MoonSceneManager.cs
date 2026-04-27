@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.HighDefinition;
+using UnityEngine.UI;
 
 
 public class MoonSceneManager : MonoBehaviour 
@@ -29,10 +30,12 @@ public class MoonSceneManager : MonoBehaviour
 
     [Header("Effect")]
     public AudioSource[] audios;
-
     public CameraEffect cameraEffect;
 
     [Header("EndGame")]
+    public Transform endGameTrans;
+    public Camera mainCamera;
+    public Text endGameText; 
     public GameObject[] disableOnEndGame;
 
 
@@ -104,11 +107,39 @@ public class MoonSceneManager : MonoBehaviour
 
     public void EndGame()
     {
-        Debug.Log("Game Ended");
         cameraEffect.CameraFadeWhite();
+        loadSceneElement.SetActive(true);
+        endGameText.text = "MISSION ACCOMPLISHED";
+        endGameText.fontSize = 80;
+        Debug.Log("Game Ended");
+        Invoke("OnEndGame", 2f);
+        foreach (var audio in audios)
+        {
+            audio.GetComponent<AudioController>().FadeOutAudio(2f);
+        }
+    }
+
+    private void OnEndGame()
+    {
         foreach (var obj in disableOnEndGame)
         {
             obj.SetActive(false);
         }
+
+        player.transform.parent = null;
+        player.transform.position = endGameTrans.position;
+        Transform cam = Camera.main.transform;
+
+        Vector3 camForward = cam.forward;
+        camForward.y = 0;
+        camForward.Normalize();
+        Vector3 targetForward = endGameTrans.forward;
+        targetForward.y = 0;
+        float angle = Vector3.SignedAngle(camForward, targetForward, Vector3.up);
+
+        player.transform.Rotate(0, angle, 0);
+
+        cameraEffect.CameraWhiteToTran();
+        onSceneLoadAnimator.Play("MoonSceneEndGame");
     }
 }

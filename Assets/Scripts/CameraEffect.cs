@@ -12,14 +12,16 @@ public class CameraEffect : MonoBehaviour
 
     [Header("Fade")]
     public GameObject Fader;
+    private Animator faderAnimator;
 
     [Header("Warning Effect")]
     public GameObject WarningEffect;
     private Material warningShaderMat;
 
-    private void Start()
+    private void Awake()
     {
         warningShaderMat = WarningEffect.GetComponent<Renderer>().material;
+        faderAnimator = Fader.GetComponent<Animator>();
     }
 
     public void CameraWarningEffect(Vector3 position)
@@ -29,22 +31,22 @@ public class CameraEffect : MonoBehaviour
 
     public void CameraFadeTran()
     {
-        Fader.GetComponent<Animator>().Play("CameraFadeTran");
+        faderAnimator.Play("CameraFadeTran");
     }
 
     public void CameraFadeBlack()
     {
-        Fader.GetComponent<Animator>().Play("CameraFadeBlack");
+        faderAnimator.Play("CameraFadeBlack");
     }
 
     public void CameraFadeWhite()
     {
-        Fader.GetComponent<Animator>().Play("CameraFadeWhite");
+        faderAnimator.Play("CameraFadeWhite");
     }
 
     public void CameraWhiteToTran()
     {
-        Fader.GetComponent<Animator>().Play("CameraWhiteToTran");
+        faderAnimator.Play("CameraWhiteToTran");
     }
 
     public void TriggerShake(float _shakeDuration, float _shakeMagnitude, float _dampingSpeed)

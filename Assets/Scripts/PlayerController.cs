@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     public AudioSource SFX_Footstep;
     public AudioClip[] moonFootstepClips;
     public AudioClip[] hardFootstepClips;
+    private Vector3 lastPosition;
 
     [Header("StepAdjust")]
     public float stepInterval = 1.5f;
@@ -21,6 +22,12 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         if (!moveLocomotion.activeSelf) { return; }
+
+        Vector3 currentPosition = transform.position;
+        lastPosition = currentPosition;
+
+        if (currentPosition != lastPosition) { return; }
+
         float h = Input.GetAxis("Horizontal");
         float v = Input.GetAxis("Vertical");
 
@@ -59,8 +66,8 @@ public class PlayerController : MonoBehaviour
 
     private int DetectSurface()
     {
-        Ray ray = new Ray(transform.position, Vector3.down);
-        Debug.DrawRay(transform.position, Vector3.down * rayDistance, Color.red, 1f);
+        Ray ray = new Ray(transform.position + new Vector3(0, 0.1f, 0), Vector3.down);
+        Debug.DrawRay(transform.position + new Vector3(0, 0.1f, 0), Vector3.down * rayDistance, Color.red, 1f);
         RaycastHit hit;
 
         if (Physics.Raycast(ray, out hit, rayDistance, groundLayer))
