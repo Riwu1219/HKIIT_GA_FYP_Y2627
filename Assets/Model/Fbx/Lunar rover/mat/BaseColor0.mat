@@ -16,8 +16,6 @@ Material:
   - _DISABLE_SSR_TRANSPARENT
   - _EMISSIVE_COLOR_MAP
   - _MASKMAP
-  - _NORMALMAP
-  - _NORMALMAP_TANGENT_SPACE
   m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -217,7 +215,7 @@ Material:
     - _DstBlend2: 0
     - _EmissiveColorMode: 1
     - _EmissiveExposureWeight: 1
-    - _EmissiveIntensity: 1540.68
+    - _EmissiveIntensity: 10000
     - _EmissiveIntensityUnit: 0
     - _EnableBlendModePreserveSpecularLighting: 1
     - _EnableFogOnTransparent: 1
@@ -245,9 +243,9 @@ Material:
     - _MaterialID: 1
     - _Metallic: 0
     - _MetallicRemapMax: 1
-    - _MetallicRemapMin: 0
+    - _MetallicRemapMin: 0.75107294
     - _Mode: 0
-    - _NormalMapSpace: 0
+    - _NormalMapSpace: 1
     - _NormalScale: 1
     - _OPACITY: 1
     - _ObjectSpaceUVMapping: 0
@@ -325,7 +323,7 @@ Material:
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
     - _EMISSION_COLOR: {r: 0, g: 0, b: 0, a: 0}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
-    - _EmissiveColor: {r: 1153.9995, g: 1153.9995, b: 1153.9995, a: 1540.68}
+    - _EmissiveColor: {r: 7490.196, g: 7490.196, b: 7490.196, a: 10000}
     - _EmissiveColorLDR: {r: 0.88031507, g: 0.88031507, b: 0.88031507, a: 1}
     - _InvPrimScale: {r: 1, g: 1, b: 0, a: 0}
     - _IridescenceThicknessRemap: {r: 0, g: 1, b: 0, a: 0}
