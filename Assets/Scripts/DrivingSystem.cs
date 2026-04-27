@@ -19,7 +19,7 @@ public class DrivingSystem : MonoBehaviour
     [Header("DrivingSystem Status")]
     public bool canEnter = true;
     public bool canExit = true;
-    public bool interactionBtnOnHover = false;
+    private bool interactionBtnOnHover = false;
     [SerializeField] protected bool isDriving = false;
 
     private void OnEnable() => controllerInteractionBind.Enable();
@@ -75,7 +75,6 @@ public class DrivingSystem : MonoBehaviour
     public void SetVeicleCanEnter(bool state)
     {
         canEnter = state;
-        SetInteractionBtnOnHover(state);
         interactionObject.SetActive(state);
     }
 
