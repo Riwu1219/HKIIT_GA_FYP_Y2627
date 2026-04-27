@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class PlayerController : MonoBehaviour
 {
@@ -19,15 +20,18 @@ public class PlayerController : MonoBehaviour
     public float rayDistance = 0.2f;
     public LayerMask groundLayer;
 
+    private void Start()
+    {
+        lastPosition = transform.position;
+    }
+
     private void Update()
     {
         if (!moveLocomotion.activeSelf) { return; }
 
         Vector3 currentPosition = transform.position;
-        lastPosition = currentPosition;
-
-        if (currentPosition != lastPosition) { return; }
-
+        if (currentPosition == lastPosition) { return; }
+        lastPosition = transform.position;
         float h = Input.GetAxis("Horizontal");
         float v = Input.GetAxis("Vertical");
 

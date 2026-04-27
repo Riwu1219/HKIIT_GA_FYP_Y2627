@@ -14,6 +14,8 @@ public class MoonRoverScript : DrivingSystem
     protected override void Start()
     {
         base.Start();
+        Invoke("SetKinematic", 1f);
+        
     }
 
     protected override void Update()
@@ -53,5 +55,10 @@ public class MoonRoverScript : DrivingSystem
         fr.steerAngle = 0;
         bl.motorTorque = 0;
         br.motorTorque = 0;
+    }
+
+    private void SetKinematic()
+    {
+        rb.isKinematic = true;
     }
 }

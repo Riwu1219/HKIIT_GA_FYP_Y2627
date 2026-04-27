@@ -518,7 +518,7 @@ MonoBehaviour:
   - {fileID: 1661923095}
   cameraEffect: {fileID: 2066532336}
   endGameTrans: {fileID: 428464659}
-  mainCamera: {fileID: 0}
+  mainCamera: {fileID: 2066532341}
   endGameText: {fileID: 1635922943}
   disableOnEndGame:
   - {fileID: 596746439}
@@ -725,7 +725,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5324519664647219918, guid: e950153e93300a748beeb31f431d56b3, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5324519664647219918, guid: e950153e93300a748beeb31f431d56b3, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -9458,6 +9458,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: CrystalBox (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5479586289816329834, guid: f03d8ec4fc5ebdd4da9a93d7a798fdf0, type: 3}
+      propertyPath: m_ThrowOnDetach
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5479586289816329834, guid: f03d8ec4fc5ebdd4da9a93d7a798fdf0, type: 3}
+      propertyPath: m_VelocityDamping
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5479586289816329834, guid: f03d8ec4fc5ebdd4da9a93d7a798fdf0, type: 3}
+      propertyPath: m_LimitLinearVelocity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5479586289816329834, guid: f03d8ec4fc5ebdd4da9a93d7a798fdf0, type: 3}
+      propertyPath: m_LimitAngularVelocity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5479586289816329834, guid: f03d8ec4fc5ebdd4da9a93d7a798fdf0, type: 3}
+      propertyPath: m_AngularVelocityDamping
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5479586289816329834, guid: f03d8ec4fc5ebdd4da9a93d7a798fdf0, type: 3}
+      propertyPath: m_MaxLinearVelocityDelta
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5479586289816329834, guid: f03d8ec4fc5ebdd4da9a93d7a798fdf0, type: 3}
+      propertyPath: m_MaxAngularVelocityDelta
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10113,6 +10141,11 @@ MonoBehaviour:
 --- !u!4 &2066532337 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5276639413281980376, guid: e950153e93300a748beeb31f431d56b3, type: 3}
+  m_PrefabInstance: {fileID: 213145010}
+  m_PrefabAsset: {fileID: 0}
+--- !u!20 &2066532341 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 5276639413281980381, guid: e950153e93300a748beeb31f431d56b3, type: 3}
   m_PrefabInstance: {fileID: 213145010}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &2093305932 stripped

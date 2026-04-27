@@ -126,7 +126,7 @@ public class MoonSceneManager : MonoBehaviour
             obj.SetActive(false);
         }
 
-        player.transform.parent = null;
+        player.transform.parent = endGameTrans;
         player.transform.position = endGameTrans.position;
         Transform cam = Camera.main.transform;
 

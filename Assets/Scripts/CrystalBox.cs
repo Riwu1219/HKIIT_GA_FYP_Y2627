@@ -7,6 +7,12 @@ public class CrystalBox : MonoBehaviour
     public GameObject openedModel;
     public GameObject closedModel;
 
+    private Rigidbody rb;
+     void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public void Update()
     {
@@ -14,7 +20,7 @@ public class CrystalBox : MonoBehaviour
         {
             Vector3 playerPos = MoonSceneManager.instance.player.transform.position;
             transform.position = new Vector3(playerPos.x, playerPos.y + 2, playerPos.z);
-            GetComponent<Rigidbody>().linearVelocity = Vector3.zero;
+            rb.linearVelocity = Vector3.zero;
         }
     }
 
@@ -31,6 +37,7 @@ public class CrystalBox : MonoBehaviour
 
     public void OnGrab()
     {
+        transform.SetParent(null);
         openedModel.SetActive(false);
         closedModel.SetActive(true);
     }
