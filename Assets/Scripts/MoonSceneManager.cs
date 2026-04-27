@@ -100,4 +100,9 @@ public class MoonSceneManager : MonoBehaviour
         if (hdriSky.rotation.value <= 0f) { hdriSky.rotation.value = 360f; }
 
     }
+
+    public void EndGame()
+    {
+        Debug.Log("Game Ended");
+    }
 }
