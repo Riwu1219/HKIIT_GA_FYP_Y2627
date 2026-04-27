@@ -3,7 +3,7 @@ using UnityEngine;
 public class CrystalBox : MonoBehaviour
 {
     public bool interactionOnHover = false;
-    public MeshRenderer mr;
+    public MeshRenderer[] mrs;
     public GameObject openedModel;
     public GameObject closedModel;
 
@@ -11,7 +11,13 @@ public class CrystalBox : MonoBehaviour
     public void SetInteractionBtnOnHover(bool state)
     {
         interactionOnHover = state;
-        mr.materials[1].SetFloat("_Enabled", state ? 1 : 0);
+        foreach (MeshRenderer mr in mrs) 
+        {
+            Debug.Log($"{mr.name} -> material count: {mr.materials.Length}");
+            mr.materials[1].SetFloat("_Enabled", state ? 1 : 0);
+
+        }
+            
     }
 
     public void OnGrab()

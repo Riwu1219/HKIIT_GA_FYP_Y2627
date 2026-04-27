@@ -1095,9 +1095,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3680392900801002041}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.34, y: 1.846, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0.9201669, z: -0, w: -0.3915263}
+  m_LocalPosition: {x: 178.46664, y: 167.49371, z: 41.656895}
+  m_LocalScale: {x: 1.1, y: 1.1, z: 1.1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2852721036736955709}
@@ -1119,7 +1119,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrystalBox
   interactionOnHover: 0
-  mr: {fileID: 1256633271665995404}
+  mrs:
+  - {fileID: 7557125436841261511}
+  - {fileID: 1256633271665995404}
   openedModel: {fileID: 6437051429743324375}
   closedModel: {fileID: 3806698342113552632}
 --- !u!54 &5387956575417483857
@@ -1383,6 +1385,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 9972c6e98f3dd0743b7bc1efffb2e563, type: 2}
+  - {fileID: 2100000, guid: 51a0b1a6e55fb82458bbe70c96ff3252, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

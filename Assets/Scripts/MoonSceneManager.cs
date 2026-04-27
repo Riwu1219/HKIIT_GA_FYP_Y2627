@@ -28,7 +28,11 @@ public class MoonSceneManager : MonoBehaviour
     public GameObject HologramHUD_Panel;
     public Animator HologramHUD_Animator;
 
+    [Header("Effect")]
+    public AudioSource[] audios;
+
     public CameraEffect cameraEffect;
+
 
 
     private void Awake()
@@ -77,6 +81,12 @@ public class MoonSceneManager : MonoBehaviour
         player.transform.rotation = spawnpoint.transform.rotation;
         player.transform.parent = null;
         loadSceneElement.SetActive(false);
+
+        // Fade in audio when scene load ended
+        foreach (var audio in audios)
+        {
+            audio.GetComponent<AudioController>().FadeInAudio(1f);
+        }
 
         HUD_Canvas.SetActive(true);
         HologramHUD_Panel.SetActive(true);

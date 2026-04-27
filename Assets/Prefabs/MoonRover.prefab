@@ -245,6 +245,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27756581d9eea464492ddbec2b5bfce9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MoonRoverScript
+  driverPlayer: {fileID: 0}
+  cc: {fileID: 0}
+  sit_trans: {fileID: 0}
+  exitOffset: {x: 2, y: 0, z: 0}
+  DisableOnDriveObject: []
+  interactionObject: {fileID: 0}
+  mr: {fileID: 0}
+  controllerInteractionBind:
+    m_Name: Controller Interaction Bind
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 31bc24db-2d07-4ab4-bc34-74861bfe7cc8
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
+  horizontalInput: 0
+  verticalInput: 0
+  canEnter: 1
+  canExit: 1
+  interactionBtnOnHover: 0
+  isDriving: 0
   rb: {fileID: 3565642975967524797}
   fl: {fileID: 1119386678138510738}
   fr: {fileID: 6185465526400834661}
@@ -252,6 +274,10 @@ MonoBehaviour:
   br: {fileID: 7614960377239457792}
   driveSpeed: 10
   steerSpeed: 30
+  driveSFX: {fileID: 0}
+  soundHorizontalShiftRate: 0
+  interactBtn: {fileID: 0}
+  speed: 0
 --- !u!54 &3565642975967524797
 Rigidbody:
   m_ObjectHideFlags: 0

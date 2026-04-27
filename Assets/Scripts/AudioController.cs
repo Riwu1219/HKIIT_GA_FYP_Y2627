@@ -4,7 +4,7 @@ using UnityEngine;
 public class AudioController : MonoBehaviour
 {
     public AudioSource audioSource;
-    public float defaultVolume = 1f;
+    private float defaultVolume = 2f;
 
     public bool isAudioPlaying => audioSource.isPlaying;
 
@@ -50,7 +50,7 @@ public class AudioController : MonoBehaviour
         if (targetVolume == 0f)
         {
             audioSource.Stop();
-            audioSource.volume = defaultVolume; // <-- critical fix
+            audioSource.volume = defaultVolume;
         }
     }
 }
