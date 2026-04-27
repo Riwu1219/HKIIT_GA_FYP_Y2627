@@ -28,6 +28,7 @@ public class ShutterScript : DrivingSystem
     public GameObject meteorSFXHolder;
     private AudioSource meteorHitSFX;
     public AudioSource shutterMoveSFX;
+    public AudioSource AmbienceOnMeteorSFX;
     public GameObject ambienceSound;
     public GameObject warningSFX;
     public CameraEffect cameraEffect;
@@ -52,8 +53,9 @@ public class ShutterScript : DrivingSystem
         instance = this;
     }
 
-    void Start()
+    protected override void Start()
     {
+        base.Start();
         spaceScale = ShutterGameManager.instance.spaceScale;
         meteorHitSFX = meteorSFXHolder.GetComponent<AudioSource>();
         canExit = false;
@@ -84,6 +86,7 @@ public class ShutterScript : DrivingSystem
     {
         //May add ui animation
         shutterMoveSFX.GetComponent<AudioController>().FadeInAudio(1f);
+        AmbienceOnMeteorSFX.GetComponent<AudioController>().FadeInAudio(1f);
         monitorCanvas.SetActive(true);
         monitorCanvas.GetComponent<Animator>().Play("Show");
         ShutterGameManager.instance.StartMeteorDodging();
