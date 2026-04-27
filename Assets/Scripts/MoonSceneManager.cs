@@ -33,6 +33,8 @@ public class MoonSceneManager : MonoBehaviour
 
     public CameraEffect cameraEffect;
 
+    [Header("EndGame")]
+    public GameObject[] disableOnEndGame;
 
 
     private void Awake()
@@ -104,5 +106,10 @@ public class MoonSceneManager : MonoBehaviour
     public void EndGame()
     {
         Debug.Log("Game Ended");
+        cameraEffect.CameraFadeWhite();
+        foreach (var obj in disableOnEndGame)
+        {
+            obj.SetActive(false);
+        }
     }
 }
