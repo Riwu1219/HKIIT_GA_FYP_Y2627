@@ -25,7 +25,7 @@ public class DrivingSystem : MonoBehaviour
     private void OnEnable() => controllerInteractionBind.Enable();
     private void OnDisable() => controllerInteractionBind.Disable();
 
-    private void Start()
+    virtual protected void Start()
     {
         if (!canEnter)
         {
