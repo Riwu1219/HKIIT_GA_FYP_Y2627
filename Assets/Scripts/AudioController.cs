@@ -4,38 +4,53 @@ using UnityEngine;
 public class AudioController : MonoBehaviour
 {
     public AudioSource audioSource;
+    public float defaultVolume = 1f;
+
     public bool isAudioPlaying => audioSource.isPlaying;
+
+    private void Awake()
+    {
+        defaultVolume = audioSource.volume; // store original
+    }
 
     public void PlayAudio()
     {
+        audioSource.volume = defaultVolume; // reset volume
         audioSource.Play();
     }
 
     public void FadeInAudio(float fadeLength)
     {
         if (audioSource.isPlaying) { return; }
-        float endVolume = audioSource.volume;
+
         audioSource.volume = 0;
         audioSource.Play();
-        StartCoroutine(VolumeFade(audioSource, endVolume, fadeLength));
+        StartCoroutine(VolumeFade(defaultVolume, fadeLength));
     }
 
     public void FadeOutAudio(float fadeLength)
     {
-        StartCoroutine(VolumeFade(audioSource, 0f, fadeLength));
+        StartCoroutine(VolumeFade(0f, fadeLength));
     }
 
-    public IEnumerator VolumeFade(AudioSource _AudioSource, float endVolume, float fadeLength)
+    public IEnumerator VolumeFade(float targetVolume, float fadeLength)
     {
         float startVolume = audioSource.volume;
-        float startTime = Time.time;
+        float time = 0f;
 
-        while (Time.time < startTime + fadeLength)
+        while (time < fadeLength)
         {
-            audioSource.volume = startVolume + ((endVolume - startVolume) * ((Time.time - startTime) / fadeLength));
+            time += Time.deltaTime;
+            audioSource.volume = Mathf.Lerp(startVolume, targetVolume, time / fadeLength);
             yield return null;
         }
 
-        if (endVolume == 0) { audioSource.Stop(); }
+        audioSource.volume = targetVolume;
+
+        if (targetVolume == 0f)
+        {
+            audioSource.Stop();
+            audioSource.volume = defaultVolume; // <-- critical fix
+        }
     }
 }

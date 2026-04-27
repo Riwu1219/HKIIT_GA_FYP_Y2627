@@ -23,6 +23,11 @@ public class MoonSceneManager : MonoBehaviour
     private float degreesPerSecond;
     public float universalTimeScale = 1f;
 
+    [Header("UI")]
+    public GameObject HUD_Canvas;
+    public GameObject HologramHUD_Panel;
+    public Animator HologramHUD_Animator;
+
     public CameraEffect cameraEffect;
 
 
@@ -72,6 +77,10 @@ public class MoonSceneManager : MonoBehaviour
         player.transform.rotation = spawnpoint.transform.rotation;
         player.transform.parent = null;
         loadSceneElement.SetActive(false);
+
+        HUD_Canvas.SetActive(true);
+        HologramHUD_Panel.SetActive(true);
+
     } 
 
     void Update()

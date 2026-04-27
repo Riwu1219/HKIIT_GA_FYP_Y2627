@@ -63,9 +63,8 @@ public class DrivingSystem : MonoBehaviour
         foreach (var obj in DisableOnDriveObject)
         {
             obj.SetActive(false);
-            cc.enabled = false;
         }
-
+        cc.enabled = false;
         driverPlayer.transform.position = sit_trans.position;
         driverPlayer.transform.rotation = sit_trans.rotation;
         interactionObject.SetActive(false);
