@@ -26,7 +26,6 @@ public class MoonSceneManager : MonoBehaviour
     [Header("UI")]
     public GameObject HUD_Canvas;
     public GameObject HologramHUD_Panel;
-    public Animator HologramHUD_Animator;
 
     [Header("Effect")]
     public AudioSource[] audios;
