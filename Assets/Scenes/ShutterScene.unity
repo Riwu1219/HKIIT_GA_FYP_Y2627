@@ -8434,7 +8434,7 @@ MonoBehaviour:
   meteorDust: {fileID: 427301589}
   meteorSFXHolder: {fileID: 1433953092}
   shutterMoveSFX: {fileID: 54889763}
-  AmbienceOnMeteorSFX: {fileID: 0}
+  AmbienceOnMeteorSFX: {fileID: 132264969}
   ambienceSound: {fileID: 1706715989}
   warningSFX: {fileID: 292627467}
   cameraEffect: {fileID: 1065296124}
