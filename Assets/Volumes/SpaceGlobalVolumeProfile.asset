@@ -15,16 +15,16 @@ MonoBehaviour:
   active: 1
   quality:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 2
   spectralLut:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: {fileID: 0}
   intensity:
     m_OverrideState: 1
-    m_Value: 0.11
+    m_Value: 0.512
   m_MaxSamples:
     m_OverrideState: 1
-    m_Value: 3
+    m_Value: 12
 --- !u!114 &-6187470712661987801
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -48,7 +48,7 @@ MonoBehaviour:
     m_OverrideState: 1
     m_Value: {r: 0.9823113, g: 1, b: 0.9292453, a: 1}
   hueShift:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 0
   saturation:
     m_OverrideState: 0
@@ -68,7 +68,7 @@ MonoBehaviour:
   active: 1
   quality:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 2
   threshold:
     m_OverrideState: 1
     m_Value: 0
@@ -77,7 +77,7 @@ MonoBehaviour:
     m_Value: 0.44
   scatter:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 1
   tint:
     m_OverrideState: 0
     m_Value: {r: 1, g: 1, b: 1, a: 1}
@@ -95,7 +95,7 @@ MonoBehaviour:
     m_Value: 2
   m_HighQualityPrefiltering:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 1
   m_HighQualityFiltering:
     m_OverrideState: 1
     m_Value: 1
@@ -187,13 +187,13 @@ MonoBehaviour:
     m_Value: 0
   color:
     m_OverrideState: 0
-    m_Value: {r: 0, g: 0, b: 0, a: 1}
+    m_Value: {r: 1, g: 1, b: 1, a: 1}
   center:
     m_OverrideState: 0
     m_Value: {x: 0.5, y: 0.5}
   intensity:
     m_OverrideState: 1
-    m_Value: 0.3
+    m_Value: 0.231
   smoothness:
     m_OverrideState: 1
     m_Value: 1
@@ -254,7 +254,7 @@ MonoBehaviour:
     m_Value: 1
   startingPosition:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 1.14
   scale:
     m_OverrideState: 1
     m_Value: 2.84
@@ -263,13 +263,13 @@ MonoBehaviour:
     m_Value: 1.05
   streaksLength:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 0.341
   streaksOrientation:
     m_OverrideState: 1
     m_Value: 7.49
   streaksThreshold:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 0
   resolution:
     m_OverrideState: 0
     m_Value: 4
@@ -294,13 +294,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d7593b3a9277ac4696b20006c21dde2, type: 3}
   m_Name: VisualEnvironment
   m_EditorClassIdentifier: Unity.RenderPipelines.HighDefinition.Runtime::UnityEngine.Rendering.HighDefinition.VisualEnvironment
-  active: 1
+  active: 0
   skyType:
     m_OverrideState: 0
     m_Value: 0
   cloudType:
     m_OverrideState: 0
-    m_Value: 0
+    m_Value: 1
   skyAmbientMode:
     m_OverrideState: 0
     m_Value: 1
