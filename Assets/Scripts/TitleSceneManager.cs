@@ -13,7 +13,8 @@ public class TitleSceneManager : MonoBehaviour
     public GameObject timeline;
     public GameObject container;
 
-    public CameraEffect cameraEffect;   
+    public CameraEffect cameraEffect;
+    public CameraEffect cameraEffect_cam3;
 
     public bool isStartBtnOnHover = false;
 
@@ -21,7 +22,7 @@ public class TitleSceneManager : MonoBehaviour
 
     private void Start()
     {
-        
+        cameraEffect.CameraFadeTran();
     }
 
     private void Update()
@@ -30,10 +31,19 @@ public class TitleSceneManager : MonoBehaviour
 
         if (isStartBtnOnHover)
         {
-            container.SetActive(false);
             // Load Animation
-            timeline.SetActive(true);
+            cameraEffect.CameraFadeBlack();
+            Invoke("DelayTimelineLoad", 1f);
         }
     }
+    private void DelayTimelineLoad()
+    {
+        container.SetActive(false);
+        timeline.SetActive(true);
+    }
 
+    public void DelayLoadScene()
+    {
+        SceneLoader.instance.LoadSceneWithDelay("ShutterScene",1.5f);
+    }
 }
