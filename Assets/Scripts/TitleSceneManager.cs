@@ -44,6 +44,7 @@ public class TitleSceneManager : MonoBehaviour
 
     public void DelayLoadScene()
     {
-        SceneLoader.instance.LoadSceneWithDelay("ShutterScene",1.5f);
+        Debug.Log("To shutter scene");
+        StartCoroutine(SceneLoader.instance.LoadSceneWithDelay("ShutterScene", 1.5f));
     }
 }

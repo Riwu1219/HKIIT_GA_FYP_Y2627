@@ -20,8 +20,15 @@ public class CameraEffect : MonoBehaviour
 
     private void Awake()
     {
-        warningShaderMat = WarningEffect.GetComponent<Renderer>().material;
-        faderAnimator = Fader.GetComponent<Animator>();
+        if (WarningEffect != null)
+        {
+            warningShaderMat = WarningEffect.GetComponent<Renderer>().material;
+        }
+        
+        if (Fader != null)
+        {
+            faderAnimator = Fader.GetComponent<Animator>();
+        }
     }
 
     public void CameraWarningEffect(Vector3 position)

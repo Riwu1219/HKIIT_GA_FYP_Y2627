@@ -758,6 +758,7 @@ GameObject:
   - component: {fileID: 265620572}
   - component: {fileID: 265620573}
   - component: {fileID: 265620574}
+  - component: {fileID: 265620575}
   m_Layer: 0
   m_Name: SceneManager
   m_TagString: Untagged
@@ -830,6 +831,48 @@ MonoBehaviour:
   followUpEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &265620575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 265620571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.SignalReceiver
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: 1abd473b6174fda4281efec6c9d95b4f, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 265620573}
+          m_TargetAssemblyTypeName: TitleSceneManager, Assembly-CSharp
+          m_MethodName: DelayLoadScene
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1316201155}
+          m_TargetAssemblyTypeName: CameraEffect, Assembly-CSharp
+          m_MethodName: CameraFadeBlack
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &290360161
 GameObject:
   m_ObjectHideFlags: 0
@@ -3386,7 +3429,7 @@ MonoBehaviour:
   shakeDuration: 0.7
   shakeMagnitude: 0.1
   dampingSpeed: -5
-  Fader: {fileID: 0}
+  Fader: {fileID: 1706016874}
   WarningEffect: {fileID: 0}
 --- !u!1 &1331097988
 GameObject:
@@ -5387,18 +5430,6 @@ MonoBehaviour:
     m_Events:
     - m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 265620573}
-          m_TargetAssemblyTypeName: TitleSceneManager, Assembly-CSharp
-          m_MethodName: DelayLoadScene
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
         - m_Target: {fileID: 1316201155}
           m_TargetAssemblyTypeName: CameraEffect, Assembly-CSharp
           m_MethodName: CameraFadeBlack
@@ -6274,7 +6305,7 @@ PlayableDirector:
   - key: {fileID: -2526857111432197753, guid: 234d705de0bcf7147bce81b47ca82761, type: 2}
     value: {fileID: 1403664349}
   - key: {fileID: -3974453373392696469, guid: 234d705de0bcf7147bce81b47ca82761, type: 2}
-    value: {fileID: 1706016879}
+    value: {fileID: 265620575}
   - key: {fileID: 4902703791661230399, guid: 234d705de0bcf7147bce81b47ca82761, type: 2}
     value: {fileID: 0}
   - key: {fileID: 7877823144549583857, guid: 234d705de0bcf7147bce81b47ca82761, type: 2}
