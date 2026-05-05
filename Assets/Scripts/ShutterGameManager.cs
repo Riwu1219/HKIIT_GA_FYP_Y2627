@@ -8,6 +8,9 @@ public class ShutterGameManager : MonoBehaviour
     public CameraEffect cameraEffect;
 
     public GameObject shutter;
+    public GameObject moon;
+    private Transform moonOrigin;
+    public float moonDistanceScaler = 1f;
     public float damageMultiplier;
     public float spaceScale = 50f;
 
@@ -34,6 +37,7 @@ public class ShutterGameManager : MonoBehaviour
     private void Awake()
     {
         instance = this;
+        moonOrigin = moon.transform;
     }
 
     private void Start()
@@ -83,6 +87,8 @@ public class ShutterGameManager : MonoBehaviour
     {
         float curProgress = Mathf.Lerp(startPercent, endPercent, curTime / playTime);
         progressBar.value = curProgress;
+        Vector3 originPos = moonOrigin.position;
+        moon.transform.position = new Vector3(originPos.x, originPos.y, originPos.z + curProgress * moonDistanceScaler);
     }
 
     public void SetMeteorGenerate()
