@@ -88,7 +88,7 @@ public class ShutterGameManager : MonoBehaviour
         float curProgress = Mathf.Lerp(startPercent, endPercent, curTime / playTime);
         progressBar.value = curProgress;
         Vector3 originPos = moonOrigin.position;
-        moon.transform.position = new Vector3(originPos.x, originPos.y, originPos.z + curProgress * moonDistanceScaler);
+        moon.transform.position = new Vector3(originPos.x, originPos.y, originPos.z - (curProgress * moonDistanceScaler));
     }
 
     public void SetMeteorGenerate()

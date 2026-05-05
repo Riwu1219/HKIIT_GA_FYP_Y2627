@@ -1857,7 +1857,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5707055800274998794, guid: 3d67480cdbb604b4ea1f7be828203fee, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7755,7 +7755,7 @@ MonoBehaviour:
   cameraEffect: {fileID: 1065296124}
   shutter: {fileID: 873381266}
   moon: {fileID: 127932004}
-  moonDistanceScaler: 1.32
+  moonDistanceScaler: 0.1
   damageMultiplier: 1
   spaceScale: 50
   meteorGenerator: {fileID: 1104886074}
