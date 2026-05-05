@@ -7577,7 +7577,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 04a6692a7194f994184041ba0c6e8732, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
@@ -7622,7 +7622,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -8511,6 +8511,7 @@ MonoBehaviour:
   meteorSFXHolder: {fileID: 1433953092}
   shutterMoveSFX: {fileID: 54889763}
   AmbienceOnMeteorSFX: {fileID: 132264969}
+  bgBeat: {fileID: 709006142}
   ambienceSound: {fileID: 1706715989}
   warningSFX: {fileID: 292627467}
   cameraEffect: {fileID: 1065296124}
