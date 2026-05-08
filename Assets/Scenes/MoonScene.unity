@@ -1210,7 +1210,7 @@ MonoBehaviour:
   m_StartingHoverFilters: []
   m_StartingSelectFilters: []
   m_ShowInteractableHoverMeshes: 1
-  m_InteractableHoverMeshMaterial: {fileID: 2100000, guid: 20bd50955e4c57143aa4ff498c140b8b, type: 2}
+  m_InteractableHoverMeshMaterial: {fileID: 2100000, guid: df4cc6ef1dbb2514a9b0138c8b773b31, type: 2}
   m_InteractableCantHoverMeshMaterial: {fileID: 0}
   m_SocketActive: 1
   m_InteractableHoverScale: 1
@@ -5343,11 +5343,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2004552069}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &570255147 stripped
-Rigidbody:
-  m_CorrespondingSourceObject: {fileID: 5387956575417483857, guid: f03d8ec4fc5ebdd4da9a93d7a798fdf0, type: 3}
-  m_PrefabInstance: {fileID: 1898559885}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &596746439 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5329377093023100966, guid: e950153e93300a748beeb31f431d56b3, type: 3}
@@ -9650,91 +9645,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 9157255915196479514, guid: e950153e93300a748beeb31f431d56b3, type: 3}
   m_PrefabInstance: {fileID: 213145010}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &1898559885
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 650199621453167222, guid: f03d8ec4fc5ebdd4da9a93d7a798fdf0, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 176.44376
-      objectReference: {fileID: 0}
-    - target: {fileID: 650199621453167222, guid: f03d8ec4fc5ebdd4da9a93d7a798fdf0, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 188.02417
-      objectReference: {fileID: 0}
-    - target: {fileID: 650199621453167222, guid: f03d8ec4fc5ebdd4da9a93d7a798fdf0, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 424.7741
-      objectReference: {fileID: 0}
-    - target: {fileID: 650199621453167222, guid: f03d8ec4fc5ebdd4da9a93d7a798fdf0, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: -0.3915263
-      objectReference: {fileID: 0}
-    - target: {fileID: 650199621453167222, guid: f03d8ec4fc5ebdd4da9a93d7a798fdf0, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 650199621453167222, guid: f03d8ec4fc5ebdd4da9a93d7a798fdf0, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.9201669
-      objectReference: {fileID: 0}
-    - target: {fileID: 650199621453167222, guid: f03d8ec4fc5ebdd4da9a93d7a798fdf0, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 650199621453167222, guid: f03d8ec4fc5ebdd4da9a93d7a798fdf0, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 650199621453167222, guid: f03d8ec4fc5ebdd4da9a93d7a798fdf0, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 650199621453167222, guid: f03d8ec4fc5ebdd4da9a93d7a798fdf0, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3680392900801002041, guid: f03d8ec4fc5ebdd4da9a93d7a798fdf0, type: 3}
-      propertyPath: m_Name
-      value: CrystalBox (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5479586289816329834, guid: f03d8ec4fc5ebdd4da9a93d7a798fdf0, type: 3}
-      propertyPath: m_ThrowOnDetach
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5479586289816329834, guid: f03d8ec4fc5ebdd4da9a93d7a798fdf0, type: 3}
-      propertyPath: m_VelocityDamping
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5479586289816329834, guid: f03d8ec4fc5ebdd4da9a93d7a798fdf0, type: 3}
-      propertyPath: m_LimitLinearVelocity
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5479586289816329834, guid: f03d8ec4fc5ebdd4da9a93d7a798fdf0, type: 3}
-      propertyPath: m_LimitAngularVelocity
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5479586289816329834, guid: f03d8ec4fc5ebdd4da9a93d7a798fdf0, type: 3}
-      propertyPath: m_AngularVelocityDamping
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5479586289816329834, guid: f03d8ec4fc5ebdd4da9a93d7a798fdf0, type: 3}
-      propertyPath: m_MaxLinearVelocityDelta
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5479586289816329834, guid: f03d8ec4fc5ebdd4da9a93d7a798fdf0, type: 3}
-      propertyPath: m_MaxAngularVelocityDelta
-      value: 3
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: f03d8ec4fc5ebdd4da9a93d7a798fdf0, type: 3}
 --- !u!1001 &1931706134
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10521,7 +10431,7 @@ PrefabInstance:
     - target: {fileID: 6954975264985932727, guid: db828b013c089dd4bb607af03442df5e, type: 3}
       propertyPath: m_InteractableHoverMeshMaterial
       value: 
-      objectReference: {fileID: 2100000, guid: 20bd50955e4c57143aa4ff498c140b8b, type: 2}
+      objectReference: {fileID: 2100000, guid: df4cc6ef1dbb2514a9b0138c8b773b31, type: 2}
     - target: {fileID: 6954975264985932727, guid: db828b013c089dd4bb607af03442df5e, type: 3}
       propertyPath: m_HoverExited.m_PersistentCalls.m_Calls.Array.size
       value: 0
@@ -10577,11 +10487,11 @@ PrefabInstance:
     - target: {fileID: 6954975264985932727, guid: db828b013c089dd4bb607af03442df5e, type: 3}
       propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 570255147}
+      objectReference: {fileID: 0}
     - target: {fileID: 6954975264985932727, guid: db828b013c089dd4bb607af03442df5e, type: 3}
       propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[3].m_Target
       value: 
-      objectReference: {fileID: 570255147}
+      objectReference: {fileID: 0}
     - target: {fileID: 6954975264985932727, guid: db828b013c089dd4bb607af03442df5e, type: 3}
       propertyPath: m_HoverExited.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -10726,4 +10636,3 @@ SceneRoots:
   - {fileID: 493897794}
   - {fileID: 771551338}
   - {fileID: 270660899}
-  - {fileID: 1898559885}

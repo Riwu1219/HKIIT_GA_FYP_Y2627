@@ -1355,7 +1355,7 @@ AnimationClip:
     messageOptions: 0
   - time: 15
     functionName: LoadScene
-    data: ShutterScene
+    data: TitleScene
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
