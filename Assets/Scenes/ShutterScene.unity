@@ -1857,7 +1857,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5707055800274998794, guid: 3d67480cdbb604b4ea1f7be828203fee, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8756,7 +8756,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: ENERGY
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 10a9852dc2b5be142a6bb32ac0d33b27, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -8822,7 +8822,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &924814323
@@ -14010,6 +14010,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4862638687902260670, guid: c8e47514547a34b44bee40c3425717e1, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8273566640168046272, guid: c8e47514547a34b44bee40c3425717e1, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.99263275
@@ -14044,6 +14048,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1973221198}
     m_Modifications:
+    - target: {fileID: 92674285965945692, guid: f9659a89605b547418af298fb3432c10, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 10a9852dc2b5be142a6bb32ac0d33b27, type: 2}
+    - target: {fileID: 92674285965945692, guid: f9659a89605b547418af298fb3432c10, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 193266165656275303, guid: f9659a89605b547418af298fb3432c10, type: 3}
       propertyPath: m_Camera
       value: 
@@ -14136,6 +14148,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4022407576601349922, guid: f9659a89605b547418af298fb3432c10, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 10a9852dc2b5be142a6bb32ac0d33b27, type: 2}
+    - target: {fileID: 4022407576601349922, guid: f9659a89605b547418af298fb3432c10, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 598253301633132453, guid: 10a9852dc2b5be142a6bb32ac0d33b27, type: 2}
+    - target: {fileID: 4022407576601349922, guid: f9659a89605b547418af298fb3432c10, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7761960978557914992, guid: f9659a89605b547418af298fb3432c10, type: 3}
       propertyPath: m_Name
       value: HUD_Canvas
@@ -14144,6 +14168,22 @@ PrefabInstance:
       propertyPath: drivingSystem
       value: 
       objectReference: {fileID: 873381269}
+    - target: {fileID: 9111625556059606492, guid: f9659a89605b547418af298fb3432c10, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 10a9852dc2b5be142a6bb32ac0d33b27, type: 2}
+    - target: {fileID: 9111625556059606492, guid: f9659a89605b547418af298fb3432c10, type: 3}
+      propertyPath: m_fontStyle
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9111625556059606492, guid: f9659a89605b547418af298fb3432c10, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 598253301633132453, guid: 10a9852dc2b5be142a6bb32ac0d33b27, type: 2}
+    - target: {fileID: 9111625556059606492, guid: f9659a89605b547418af298fb3432c10, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

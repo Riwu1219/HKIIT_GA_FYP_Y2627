@@ -4260,6 +4260,10 @@ PrefabInstance:
       value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 3993896844260944123, guid: 4f86dca8480ffa54e8b111cabc40f0c4, type: 3}
+      propertyPath: m_Name
+      value: Model
+      objectReference: {fileID: 0}
+    - target: {fileID: 3993896844260944123, guid: 4f86dca8480ffa54e8b111cabc40f0c4, type: 3}
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
@@ -6361,6 +6365,14 @@ PrefabInstance:
       propertyPath: m_text
       value: Arrive MoonBase
       objectReference: {fileID: 0}
+    - target: {fileID: 92674285965945692, guid: f9659a89605b547418af298fb3432c10, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 10a9852dc2b5be142a6bb32ac0d33b27, type: 2}
+    - target: {fileID: 92674285965945692, guid: f9659a89605b547418af298fb3432c10, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 582810660953878569, guid: f9659a89605b547418af298fb3432c10, type: 3}
       propertyPath: m_PresetInfoIsWorld
       value: 1
@@ -6453,6 +6465,14 @@ PrefabInstance:
       propertyPath: m_text
       value: Receive Moon Crystal
       objectReference: {fileID: 0}
+    - target: {fileID: 4022407576601349922, guid: f9659a89605b547418af298fb3432c10, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 10a9852dc2b5be142a6bb32ac0d33b27, type: 2}
+    - target: {fileID: 4022407576601349922, guid: f9659a89605b547418af298fb3432c10, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7761960978557914992, guid: f9659a89605b547418af298fb3432c10, type: 3}
       propertyPath: m_Name
       value: HUD_Canvas
@@ -6465,6 +6485,14 @@ PrefabInstance:
       propertyPath: drivingSystem
       value: 
       objectReference: {fileID: 1850393739318271699}
+    - target: {fileID: 9111625556059606492, guid: f9659a89605b547418af298fb3432c10, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 10a9852dc2b5be142a6bb32ac0d33b27, type: 2}
+    - target: {fileID: 9111625556059606492, guid: f9659a89605b547418af298fb3432c10, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8847,12 +8875,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 9b2bad44ace2f844bb3b96ddd2a39792, type: 3}
-    m_FontSize: 250
+    m_Font: {fileID: 12800000, guid: 092d8f02151dd794c9aeb032cc6aeb18, type: 3}
+    m_FontSize: 290
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
-    m_MaxSize: 256
+    m_MaxSize: 300
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
