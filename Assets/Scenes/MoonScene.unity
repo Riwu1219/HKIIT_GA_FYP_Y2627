@@ -226,7 +226,7 @@ GameObject:
   - component: {fileID: 33865309}
   - component: {fileID: 33865308}
   - component: {fileID: 33865307}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: d1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1080,7 +1080,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5707055800274998794, guid: 3d67480cdbb604b4ea1f7be828203fee, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6637,7 +6637,7 @@ GameObject:
   - component: {fileID: 923735994}
   - component: {fileID: 923735993}
   - component: {fileID: 923735992}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: p1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7316,9 +7316,29 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -8644064040745460003, guid: 15771c4af50b60b4e9d0ccc4bfaf104e, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: -3365146580544551749, guid: 15771c4af50b60b4e9d0ccc4bfaf104e, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: -716134541888296200, guid: 15771c4af50b60b4e9d0ccc4bfaf104e, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 15771c4af50b60b4e9d0ccc4bfaf104e, type: 3}
       propertyPath: m_Name
       value: missed
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 15771c4af50b60b4e9d0ccc4bfaf104e, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1919444099715764463, guid: 15771c4af50b60b4e9d0ccc4bfaf104e, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 2332275356339848632, guid: 15771c4af50b60b4e9d0ccc4bfaf104e, type: 3}
       propertyPath: m_LocalScale.x
@@ -8408,7 +8428,7 @@ GameObject:
   - component: {fileID: 1266412160}
   - component: {fileID: 1266412159}
   - component: {fileID: 1266412158}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: p2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8751,7 +8771,7 @@ GameObject:
   - component: {fileID: 1340564729}
   - component: {fileID: 1340564728}
   - component: {fileID: 1340564727}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: s1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9465,6 +9485,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 16.62
       objectReference: {fileID: 0}
+    - target: {fileID: -89334291610882799, guid: 0e9af06188c78f64fa1f5e27cc2a02df, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 836110199618658434, guid: 0e9af06188c78f64fa1f5e27cc2a02df, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -9472,6 +9496,14 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 0e9af06188c78f64fa1f5e27cc2a02df, type: 3}
       propertyPath: m_Name
       value: collider
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0e9af06188c78f64fa1f5e27cc2a02df, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7022951369239062046, guid: 0e9af06188c78f64fa1f5e27cc2a02df, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
